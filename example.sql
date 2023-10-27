@@ -1,2 +1,0 @@
--- Register 
-INSERT INTO `user` (`userID`, `email`, `username`, `password`, `emotionalTag`, `statusTag`, `description`, `chicken`, `registerTime`, `lastLoginTime`) VALUES (NULL, NULL, 'pingsunn', '123zqddaxczcw1ss', NULL, NULL, 'Hello world, i am ping', '0', current_timestamp(), NULL);
