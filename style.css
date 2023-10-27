@@ -61,21 +61,23 @@ button {
     border-color: #0d6efd;
 }
 
-.input.error{
+.input.error {
     border-color: red !important;
 }
-label span{
+
+label span {
     color: red;
 }
 
-.msg{
+.msg {
     border: 1px solid #66BA7A;
     background: #F3FFD1;
     padding: 10px;
     border-radius: 3px;
 }
-.msg.error{
-    border-color:#e33b54;
+
+.msg.error {
+    border-color: #e33b54;
     background: #f9d7dc;
 }
 
@@ -114,7 +116,8 @@ label {
 .profile {
     text-align: center;
 }
-.profile img{
+
+.profile img {
     display: inline-block;
     border: 3px solid #ccc;
     border-radius: 50%;
@@ -122,7 +125,7 @@ label {
     height: 150px;
 }
 
-h2 span{
+h2 span {
     display: block;
     font-size: 15px;
     font-weight: 400;
