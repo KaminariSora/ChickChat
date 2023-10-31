@@ -37,7 +37,8 @@ body {
     display: flex;
     align-items: center;
     margin: 1% 0.4% 2% 0.2%;
-    background: #EE964B;
+    /* background: #EE964B; */
+    background: purple;
 }
 
 .bottomChat {
