@@ -1,19 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+    body {
+        @apply background: #F4D35E;
+    }
+}
+
 body {
-    background: #F4D35E;
+    /* background: #F4D35E; */
     /* border-radius: 72px; */
-    height: 100vh;
+    /* height: 100vh; */
     /* width: 100vw; */
-    overflow: hidden;
+    /* overflow: hidden; */
     /* Vertically center the container in the viewport */
     /* justify-content: center; */
     /* Horizontally center the container in the viewport */
 }
 
 .flexBox {
-    display: flex;
+    /* display: flex; */
     /* position: absolute; */
     /* top: 50%; */
     /* Center vertically by moving 50% from the top */
