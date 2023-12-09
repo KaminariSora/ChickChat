@@ -1,0 +1,173 @@
+:root {
+    --background-color: rgba(244,211,94) ;
+    --base-color: rgba(238, 150, 075);
+    --box-color: rgba(217,217,217);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    background: var(--background-color);
+}
+
+header {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+header img {
+    width: auto;
+    height: 100px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80%;
+}
+
+.dressing {
+    position: relative;
+    /* border: 2px solid red; */
+}
+
+.dressing img{
+    min-width: 200px;
+    min-height: 200px;
+    height: 100px;
+}
+
+.face-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: repeat(3,auto);
+    min-width: 320px;
+    width: auto;
+    height: auto;
+    background: var(--box-color);
+}
+
+.avatar-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    min-width: 320px;
+    max-width: 400px;
+    height: 400px;
+}
+
+.avatar-div {
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid black; */
+}
+
+#faceDiv {
+    position: relative;
+    background-image: url('image/Dressing.PNG');
+}
+
+#clothesDiv {
+    position: absolute;
+    left: 50%;
+    bottom: 27%;
+    transform: translate(-50%, 10%);
+    width: 65%;
+    height: 25%;
+    background-image: none;
+    /* border: 2px solid #333; */
+}
+
+.img {
+    width: 150px;
+    /* height: 120px; */
+    margin: auto;
+}
+
+.img-list img {
+    width: 100px;
+}
+
+.face-box button {
+    width: auto;
+    height: auto;
+    margin: 10px;
+}
+
+.face-box button:hover {
+    background: var(--base-color);
+}
+
+/* lock status */
+.clothes-item {
+    position: relative;
+}
+
+.lock {
+    position: absolute;
+    left: 28%;
+    top: 5%;
+    font-size: 5rem;
+}
+
+.shop {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 20px;
+    background: transparent;
+    border: none;
+}
+
+.save {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 20px;
+    background: transparent;
+    border: none;
+}
+
+.shop i,
+.save i {
+    font-size: 4rem;
+    cursor: pointer;
+}
+
+footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    bottom: 0px;
+    width: 100%;
+    height: 5rem;
+}
+
+@media (max-width: 451px) {
+    .wrapper {
+        height: 200vh;
+    }
+}

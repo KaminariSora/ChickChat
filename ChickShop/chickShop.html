@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChickShop</title>
+    <link rel="stylesheet" href="ChickShop.css">
+    <link rel="icon" href="Image/IMG_1012.PNG" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/26997adfb2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <img src="image/IMG_1012.PNG" class="logo">
+        <div class="chicken">
+            <p>${Number}</p>
+            <img src="image/IMG_0991.PNG" alt="none">
+        </div>
+    </header>
+    <div class="container">
+        <nav class="navbar">
+            <button class="av-shop focus">Avatar Shop</button>
+            <br>
+            <button class="chick">Chick Shop</button>
+        </nav>
+        <div class="shop-zone avatar-shop active">
+            <div class="wrapper">
+                <div class="item">
+                    <img src="image/IMG_0991.PNG" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/IMG_0991.PNG" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/IMG_0991.PNG" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/IMG_0991.PNG" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/IMG_0991.PNG" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/IMG_0991.PNG" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="shop-zone chick-shop">
+            <div class="wrapper">
+                <div class="item">
+                    <img src="image/IMG_0993.PNG" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/IMG_0993.PNG" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/IMG_0993.PNG" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/IMG_0993.PNG" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/IMG_0993.PNG" alt="">
+                </div>
+                <div class="item">
+                    <img src="image/IMG_0993.PNG" alt="">
+                </div>
+            </div>
+        </div> 
+    </div>
+    <footer>
+        <div class="footer-container" id="home">
+            <i class="fa-solid fa-house"></i>
+        </div>
+    </footer>
+    <script>
+        const shopZone = document.querySelectorAll('.shop-zone');
+        const avatarShopBtn = document.querySelector('.av-shop');
+        const avatarShop = document.querySelector('.avatar-shop');
+        const chickShopBtn = document.querySelector('.chick');
+        const chickShop = document.querySelector('.chick-shop');
+        const home = document.getElementById('home');
+
+        avatarShopBtn.addEventListener('click', () => {
+            console.log('click on avatar shop');
+            chickShop.classList.remove('active');
+            avatarShop.classList.add('active');
+            chickShopBtn.classList.remove('focus');
+            avatarShopBtn.classList.add('focus');
+            console.log('After adding "active":', avatarShop.classList);
+        });
+
+        chickShopBtn.addEventListener('click', () => {
+            console.log('click on chick shop');
+            avatarShop.classList.remove('active');
+            chickShop.classList.add('active');
+            avatarShopBtn.classList.remove('focus');
+            chickShopBtn.classList.add('focus');
+            console.log('After adding "active":', chickShop.classList);
+        });
+
+        home.addEventListener('click', () => {
+            window.location.href = '../ChickChatHome/home.html';
+        })
+    </script>
+</body>
+
+</html>

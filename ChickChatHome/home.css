@@ -1,0 +1,531 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+:root {
+    --background-color: rgba(244, 211, 94);
+    --base-color: rgba(238, 150, 075);
+    --low-opacity-base-color: rgba(238, 150, 075, 0.5);
+    --box-color: rgba(217, 217, 217);
+    --shadow: 10px 5px 20px black;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    height: fit-content;
+    background: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    /* border: 5px solid red; */
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* height: auto; */
+    background: var(--background-color);
+    /* border: 2px solid #333; */
+    z-index: 1;
+    transition: height 0.5s;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    max-height: 100px;
+    margin-right: 500px auto;
+    margin-left: 100px auto;
+    object-fit: contain;
+}
+
+.inside-banner {
+    width: auto;
+    height: 100px;
+    /* max-height: 100px; */
+}
+
+.header img {
+    max-height: 100%;
+    width: auto;
+}
+
+.chicken {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    height: 50px;
+    width: auto;
+    background: white;
+    border-radius: 20px;
+}
+
+.grid {
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 3rem;
+    /* border: 5px solid black; */
+    /* overflow: hidden; */
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: rgb(248, 126, 82);
+    padding: clamp(1px, 50%, 20px);
+    border-radius: 28px;
+    max-width: 380px;
+    width: 100%;
+    max-height: auto;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform .5s ease;
+    box-shadow: var(--shadow);
+    z-index: 0;
+    margin: 20px auto;
+    overflow: auto ;
+}
+
+.head,
+.logo,
+.ID {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+}
+
+.logo {
+    line-height: 15px;
+}
+
+.logo img {
+    width: 48px;
+    margin-right: 10px;
+}
+
+h5 {
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    /* border: 1px solid white; */
+}
+
+.head .chip {
+    width: 60px;
+}
+
+h6 {
+    color: black;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+h5.number {
+    margin-top: 4px;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+h5.name {
+    margin-top: 20px;
+}
+
+.container .card-details {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    /* border: 2px solid aqua; */
+}
+
+.toe {
+    width: auto;
+    height: 70px;
+}
+
+.logo-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ChickChat {
+    width: auto;
+    height: 50px;
+}
+
+.character {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50vh;
+    min-width: auto;
+    transition: transform .5s ease;
+    /* border: 10px solid pink; */
+}
+
+.dressing {
+    position: relative;
+    /* border: 2px solid red; */
+}
+
+.dressing img{
+    min-width: 200px;
+    min-height: 200px;
+    height: 100px;
+}
+
+.avatar-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    min-width: 320px;
+    max-width: 400px;
+    height: 400px;
+}
+
+.avatar-div {
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid black; */
+}
+
+#faceDiv {
+    position: relative;
+    background-image: url('image/Dressing.PNG');
+}
+
+#clothesDiv {
+    position: absolute;
+    left: 50%;
+    bottom: 27%;
+    transform: translate(-50%, 10%);
+    width: 65%;
+    height: 25%;
+    background-image: none;
+    /* border: 2px solid #333; */
+}
+
+#pencil {
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+    font-size: 2rem;
+}
+
+#pencil:hover {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    color: var(--base-color);
+}
+
+.random {
+    position: relative;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    height: auto;
+    width: 60%;
+    border-radius: 20px;
+    background: var(--base-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    /* overflow: hidden; */
+}
+
+.random i {
+    position: relative;
+    right: 0px;
+    pointer-events: none;
+}
+
+.random:hover {
+    background: yellow;
+    box-shadow: var(--shadow);
+    font-weight: bold;
+}
+
+.footer {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    /* background: var(--box-color); */
+}
+
+.icon-box {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 3rem;
+    margin: 20px;
+    /* border: 2px solid black; */
+}
+
+.help btn {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    font-size: 3rem;
+    margin: 20px auto;
+}
+
+.help-btn {
+    margin: 20px;
+}
+
+.icon-box i:hover,
+.help i:hover {
+    color: var(--base-color);
+    box-shadow: inset 0px 0px 10px 2px black;
+}
+
+.HowToUse {
+    display: flex;
+    position: absolute;
+    right: 0%;
+    top: 20%;
+    transform: translate(-10%, -50%);
+    width: 70%;
+    /* height: 80%; */
+    /* background: white; */
+    /* box-shadow: inset 0px 0px 10px 2px black; */
+    z-index: 200;
+}
+
+.container-HowToUse {
+    position: absolute;
+    max-width: 1000px;
+    width: 100%;
+    /* height: 100%; */
+    border: 5px solid #333;
+    box-shadow: inset 0px 0px 10px 2px black;
+    background: white;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 32px;
+    /* background: var(--background-color); */
+}
+
+.slider-wrapper {
+    position: relative;
+}
+
+.slider-wrapper .slide-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: #333;
+    font-size: 2.2rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.slider-wrapper .slide-button:hover {
+    background: #444;
+}
+
+.slider-wrapper .slide-button#prev-slide {
+    left: -20px;
+    display: none;
+}
+
+.slider-wrapper .slide-button#next-slide {
+    right: -20px;
+}
+
+.slider-wrapper .image-list {
+    display: grid;
+    gap: 18px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.slider-wrapper .image-list::-webkit-scrollbar {
+    display: none;
+}
+
+.slider-wrapper .image-list .image-item {
+    width: 325px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.container-HowToUse .slider-scrollbar {
+    height: 24px;
+    width: 100%;
+    display: none;
+    align-items: center;
+}
+
+.slider-scrollbar .scrollbar-track {
+    height: 2px;
+    width: 100%;
+    background: #ccc;
+    position: relative;
+    border-radius: 4px;
+}
+
+.slider-scrollbar:hover .scrollbar-track {
+    height: 4px;
+}
+
+.slider-scrollbar .scrollbar-thumb {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background: #000;
+    border-radius: inherit;
+    cursor: grab;
+}
+
+.slider-scrollbar .scrollbar-thumb:active {
+    cursor: grabbing;
+    height: 8px;
+    top: -2px;
+}
+
+.slider-scrollbar .scrollbar-thumb::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
+    bottom: -10px;
+}
+
+.back {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 150px;
+    height: 50px;
+    margin: 20px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(238, 150, 75);
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+#toggleButton {
+    background: none;
+    border: none;
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 374px) {
+    .banner {
+        min-height: 50px;
+    }
+
+    .footer a {
+        font-size: 2rem;
+    }
+
+    .help i {
+        font-size: 2rem;
+        color: #333;
+    }
+
+    .random {
+        font-size: 18px;
+    }
+
+    .random i {
+        display: none;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 426px) {
+    .container {
+        height: fit-content;
+    }
+
+    .banner {
+        min-height: 50px;
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .random i {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 447px) {
+    .card {
+      top: 80px;  
+      z-index: 100;
+    }
+}
+
+@media only screen and (max-width: 726px) {
+    .banner {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .chicken {
+        position: inherit;
+        /* margin: 0; */
+        right: 0 !important;
+    }
+
+    .inside-banner {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 1023px) {
+    .random i {
+        display: none;
+    }
+}
