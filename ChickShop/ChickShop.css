@@ -10,6 +10,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -135,6 +136,7 @@ header {
 }
 
 .item {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,6 +157,15 @@ header {
 
 .item:hover {
     background: yellow;
+}
+
+.price {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
 }
 
 footer {
