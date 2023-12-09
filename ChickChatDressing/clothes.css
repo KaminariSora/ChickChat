@@ -40,7 +40,7 @@ header img {
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    height: 80%;
+    /* height: 80%; */
 }
 
 .dressing {
@@ -169,5 +169,11 @@ footer {
 @media (max-width: 451px) {
     .wrapper {
         height: 200vh;
+    }
+}
+
+@media screen and (min-width: 851px) {
+    .container {
+        height: 80%;
     }
 }
