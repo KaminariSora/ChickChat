@@ -77,6 +77,15 @@ if(!isset($_SESSION['UserID'])){
                             </ul>
                         </li>
                     </ul>
+                    <select name="" id="Status">
+                        <option value="">Tag-1</option>
+                        <option value="">Tag-2</option>
+                        <option value="">Tag-3</option>
+                        <option value="">Tag-4</option>
+                        <option value="">Tag-5</option>
+                        <option value="">Tag-1</option>
+                        <option value="">Tag-1</option>
+                    </select>
                 </div>
                 <div class="input-box">
                     <ul>
