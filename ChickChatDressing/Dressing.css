@@ -187,6 +187,15 @@ header img {
     max-width: 320px;
 }
 
+#Status {
+    background: var(--box-color);
+    min-width: 300px;
+    max-width: 320px;
+    font-size: 1.2rem;
+    padding: 10px;
+    border: none;
+}
+
 ul {
     list-style: none;
     background: var(--box-color);
