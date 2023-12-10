@@ -187,7 +187,7 @@ header img {
     max-width: 320px;
 }
 
-ul {
+select {
     list-style: none;
     background: var(--box-color);
     min-width: 300px;
@@ -201,21 +201,21 @@ li:hover {
     box-shadow: var(--shadow);
 }
 
-ul li {
+select li {
     display: block;
     position: relative;
 }
 
-ul li p {
+select li p {
     display: block;
     padding: 10px;
 }
 
-ul.dropdown li {
+select.dropdown li {
     display: block;
 }
 
-ul.dropdown {
+select.dropdown {
     width: 100%;
     position: absolute;
     z-index: 999;
@@ -224,7 +224,7 @@ ul.dropdown {
     box-shadow: var(--shadow);
 }
 
-ul.dropdown li:hover {
+select.dropdown li:hover {
     background: var(--base-color);
 }
 

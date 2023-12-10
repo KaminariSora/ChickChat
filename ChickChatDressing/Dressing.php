@@ -1,11 +1,19 @@
 <?php
    include("../server/connect.php");
 
-   $EmoSql = 'SELECT EmoName FROM emotiontag ';
-   $StatusSql = 'SELECT StatusName FROM Statustag';
+   $EmoSql = 'SELECT * FROM emotiontag ';
+   $StatusSql = 'SELECT * FROM Statustag';
    $queryEmo = mysqli_query($connect,$EmoSql);
    $queryStatus = mysqli_query($connect,$StatusSql);
 
+?>
+<?php 
+session_start();
+
+if(!isset($_SESSION['UserID'])){
+    $_SESSION['error'] = "You must login first";
+    header('location: ../ChickChatLogIn/login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +32,16 @@
     <header>
         <img src="image/IMG_1012.PNG" alt="">
     </header>
+        <?php if(isset($_SESSION['error'])):?>
+                <div class="error">
+                    <h3>
+                        <?php
+                        echo $_SESSION['error'];
+                        unset ($_SESSION['error']);
+                        ?>
+                    </h3>
+                </div>
+        <?php endif?>
     <div class="container">
         <div class="box box-1">
             <div class="button-left">
@@ -48,21 +66,13 @@
             </form>
         </div>
         <div class="box box-3">
-            <form action="#">
+            <form action="Dressing_DB.php" method = 'POST'>
                 <div class="input-box">
                     <ul>
                         <li class="menu-item">
                             <p>StatusTag<i class="fa-solid fa-caret-down"></i></p>
-                            <ul class="dropdown">
-                            <?php
-                                while ($Status = mysqli_fetch_assoc($queryStatus)) {
-                            ?>
-                                <li>
-                                    <p class="tag"><?php echo $Status['StatusName']; ?></p>
-                                </li>
-                            <?php
-                            }
-                            ?>
+                            <ul class="dropdown" name = 'Status' >
+
                                 <!-- TagDB Show -->
                             </ul>
                         </li>
@@ -72,25 +82,28 @@
                     <ul>
                         <li class="menu-item2">
                             <p>EmotionTag<i class="fa-solid fa-caret-down"></i></p>
-                            <ul class="dropdown">
-                            <?php
-                                while ($Emo = mysqli_fetch_assoc($queryEmo)) {
-                            ?>
-                                <li>
-                                    <p class="tag2"><?php echo $Emo['EmoName']; ?></p>
-                                </li>
-                            <?php
-                            }
-                            ?>
-                            </ul>
+                            <select name = "Emotion">
+                                    <?php
+                                        while ($Emo = mysqli_fetch_assoc($queryEmo)) {
+                                    ?>
+                                        <option values = "<?php echo $Emo['EmoID']?>">
+                                            <p class="tag-2" >
+                                                <?php echo $Emo['EmoName']; ?>
+                                            </p>
+                                        </option>
+                                    <?php
+                                    }
+                                    ?>
+                            <!-- Emotag DB Show -->
+                            </select>
                         </li>
                     </ul>
                 </div>
                 <div class="input-box description">
-                    <textarea id="message" name="message" rows="8" required></textarea>
+                    <textarea id="message" name="message" rows="8"></textarea>
                     <label for="message">Description</label>
                 </div>
-                <button class="confirm">confirm</button>
+                <button type = 'submit' class="confirm" name = 'comfirm'>confirm</button>
             </form>
         </div>
     </div>
@@ -167,9 +180,9 @@
     });
 
     confirm.addEventListener("click", () => {
-        window.location.href = '../ChickChatHome/home.php';
+        window.location.href = '../ChickChatDressing/Dressing.php';
     })
-
+    ///แก้เป็น home
 </script>
 </body>
 

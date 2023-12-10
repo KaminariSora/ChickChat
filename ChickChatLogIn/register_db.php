@@ -39,7 +39,8 @@ while ($n < 7) {
     $CatSql = "INSERT INTO usercatalog(UserID,Catproduct) VALUES ({$result['UserID']}, $n)";
     mysqli_query($connect, $CatSql);
     $n++;
-}    
+} 
+//insert UserCatalog   
 header('location: ../ChickChatDressing/Dressing.php');
 
 
