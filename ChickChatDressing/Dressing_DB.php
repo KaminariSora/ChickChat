@@ -5,6 +5,12 @@ include("../server/connect.php");
 if(isset($_POST['confirm'])){
     $Status = $_POST['Status'];
     $Emotion = $_POST['Emotion'];
+    if(isset($_POST['name'])){
+        $sql = "UPDATE profile set Name_avatar = {$_POST['name']} WHERE ProfileId = {$_SESSION['UserID']}";
+        $query = mysqli_query($connect,$sql);
+        header("location: Dressing.php");
+    }
+    $Name = $_POST['name'];
     $sql = "SELECT * FROM profile WHERE ProfileID = {$_SESSION['UserID']}";
     $query = mysqli_query($connect,$sql);
     $result = mysqli_fetch_assoc($query);

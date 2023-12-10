@@ -76,9 +76,9 @@ if(!isset($_SESSION['UserID'])){
                     <!-- Clothes content goes here -->
                 </div>
             </div>
-            <form action="">
+            <form action="Dressing_DB.php" method = 'POST' >
                 <div class=" input-box Name">
-                    <input type="text" required>
+                    <input type="text" id = 'name' required>
                     <label>Enter Your Name <i class="fa-solid fa-pencil"></i></label>
                 </div>
             </form>
@@ -86,18 +86,22 @@ if(!isset($_SESSION['UserID'])){
         <div class="box box-3">
             <form action="Dressing_DB.php" method = "POST">
                 <div class="input-box">
+
                     <select name="Status" id="Status">
                         <?php while($Status = mysqli_fetch_assoc($queryStatus)){?>
                             <option value="<?php echo $Status['StatusID']?>"><?php echo $Status['StatusName']?></option>
                         <?php }?>
                     </select>
+                    <!-- Show Status Tag -->
                 </div>
                 <div class="input-box">
+
                     <select name="Emotion" id="Status">
                         <?php while($Emotion = mysqli_fetch_assoc($queryEmo)){?>
                             <option value="<?php echo $Emotion['EmotionID']?>"><?php echo $Emotion['EmoName']?></option>
                         <?php }?>
                     </select>
+                    <!-- Show Emotion Tag -->
                 </div>
                 <div class="input-box description">
                     <textarea id="message" name="message" rows="8" ></textarea>
@@ -142,9 +146,9 @@ if(!isset($_SESSION['UserID'])){
         });
     });
 
-    // confirm.addEventListener("click", () => {
-    //     window.location.href = '../ChickChatHome/home.html';
-    // })
+    confirm.addEventListener("click", () => {
+        var text = document.getElementById("name").value;
+    })
 
 </script>
 </body>
