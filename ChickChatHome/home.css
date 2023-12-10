@@ -28,6 +28,10 @@ a {
     color: #333;
 }
 
+.active {
+    display: flex !important;
+}
+
 .container {
     position: relative;
     display: flex;
@@ -290,7 +294,7 @@ h5.name {
 
 .icon-box {
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     font-size: 3rem;
@@ -298,16 +302,16 @@ h5.name {
     /* border: 2px solid black; */
 }
 
-.help btn {
-    display: flex;
-    align-items: end;
-    justify-content: end;
+.icon-box button {
     font-size: 3rem;
-    margin: 20px auto;
+    background: none;
+    border: none;
+    color: #333;
 }
 
 .help-btn {
     margin: 20px;
+    color: #333;
 }
 
 .icon-box i:hover,
@@ -388,7 +392,7 @@ h5.name {
 .slider-wrapper .image-list {
     display: grid;
     padding: 20px;
-    gap: 18px;
+    gap: 30px;
     overflow-x: auto;
     scrollbar-width: none;
     grid-template-columns: repeat(10, 100%);
@@ -465,6 +469,63 @@ h5.name {
     background: none;
     border: none;
     font-size: 3rem;
+}
+
+.message-container {
+    position: absolute;
+    display: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 500px;
+    /* border: 5px solid black; */
+    z-index: 400;
+}
+
+.message-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 500px;
+    background: white;
+    z-index: 300;
+    border-radius: 0px 10px 0px 0px;
+    overflow: scroll;
+}
+
+.message-box::-webkit-scrollbar {
+    width: 10px;
+}
+
+.mark {
+    position: absolute;
+    top: -10%;
+    right: -20px;
+    font-size: clamp(2.5rem, 4vw, 3rem);
+    /* background-color: #fff; */
+    z-index: 400;
+}
+
+.mark:hover {
+    color: var(--base-color);
+}
+
+.message {
+    width: 95%;
+    height: auto;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    border: 2px solid black;
+    border-radius: 0px 15px 15px 15px;
+    margin-top: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Round the corners of the scrollbar thumb */
 }
 
 @media screen and (max-width: 374px) {
