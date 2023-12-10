@@ -68,7 +68,6 @@ if(!isset($_SESSION['UserID'])){
         <div class="box box-3">
             <form action="Dressing_DB.php" method = 'POST'>
                 <div class="input-box">
-<<<<<<< HEAD:ChickChatDressing/Dressing.php
                     <ul>
                         <li class="menu-item">
                             <p>StatusTag<i class="fa-solid fa-caret-down"></i></p>
@@ -99,28 +98,6 @@ if(!isset($_SESSION['UserID'])){
                             </select>
                         </li>
                     </ul>
-=======
-                    <select name="" id="Status">
-                        <option value="">Tag-1</option>
-                        <option value="">Tag-2</option>
-                        <option value="">Tag-3</option>
-                        <option value="">Tag-4</option>
-                        <option value="">Tag-1</option>
-                        <option value="">Tag-1</option>
-                        <option value="">Tag-1</option>
-                    </select>
-                </div>
-                <div class="input-box">
-                    <select name="" id="Status">
-                        <option value="">Tag-1</option>
-                        <option value="">Tag-1</option>
-                        <option value="">Tag-1</option>
-                        <option value="">Tag-1</option>
-                        <option value="">Tag-1</option>
-                        <option value="">Tag-1</option>
-                        <option value="">Tag-1</option>
-                    </select>
->>>>>>> Beta:ChickChatDressing/Dressing.html
                 </div>
                 <div class="input-box description">
                     <textarea id="message" name="message" rows="8"></textarea>
