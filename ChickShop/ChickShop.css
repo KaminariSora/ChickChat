@@ -23,7 +23,8 @@ body {
     display: flex;
 }
 
-.confirm-box {
+.confirm-box,
+.successful {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -35,17 +36,19 @@ body {
     background: white;
     text-align: center;
     line-height: 5rem;
-    font-size: clamp(1.2rem, 4vw, 2.5rem);;
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
     z-index: 200;
 }
 
-.confirm-box .Q {
+.confirm-box .Q,
+.successful-title {
     width: 100%;
     height: 10%;
     pointer-events: none;
 }
 
-.confirm-box .A {
+.confirm-box .A,
+.successful .successful-button {
     position: absolute;
     display: flex;
     align-items: center;
@@ -55,7 +58,8 @@ body {
     width: 100%;
 }
 
-.confirm-box .A button {
+.confirm-box .A button,
+.successful .successful-button button {
     font-size: 4vw;
     background-color: var(--base-color);
     border-radius: 20px;
@@ -64,7 +68,8 @@ body {
     z-index: 400;
 }
 
-.confirm-box .A button:hover {
+.confirm-box .A button:hover,
+.successful button:hover {
     background: yellow;
     cursor: pointer;
 }
