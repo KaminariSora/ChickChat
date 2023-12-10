@@ -71,7 +71,7 @@
                         <div id="clothesDiv" class="avatar-div">
                             <!-- Clothes content goes here -->
                         </div>
-                        <a href="../ChickChatDressing/Dressing.html"><i class="fa-solid fa-pencil" id="pencil"></i></a>
+                        <a href="../ChickChatDressing/Dressing.php"><i class="fa-solid fa-pencil" id="pencil"></i></a>
                     </div>
                     <div class="random">Random</div>
                 </div>

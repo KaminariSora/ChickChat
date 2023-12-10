@@ -1,3 +1,13 @@
+<?php
+   include("../server/connect.php");
+
+   $EmoSql = 'SELECT EmoName FROM emotiontag ';
+   $StatusSql = 'SELECT StatusName FROM Statustag';
+   $queryEmo = mysqli_query($connect,$EmoSql);
+   $queryStatus = mysqli_query($connect,$StatusSql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,10 +34,10 @@
         <div class="box box-2">
             <div class="avatar-container">
                 <div id="faceDiv" class="avatar-div">
-                    <!-- Face content goes here -->
+                    <!-- Face DB content goes here -->
                 </div>
                 <div id="clothesDiv" class="avatar-div">
-                    <!-- Clothes content goes here -->
+                    <!-- Clothes DB content goes here -->
                 </div>
             </div>
             <form action="">
@@ -42,23 +52,18 @@
                 <div class="input-box">
                     <ul>
                         <li class="menu-item">
-                            <p>Tag<i class="fa-solid fa-caret-down"></i></p>
+                            <p>StatusTag<i class="fa-solid fa-caret-down"></i></p>
                             <ul class="dropdown">
+                            <?php
+                                while ($Status = mysqli_fetch_assoc($queryStatus)) {
+                            ?>
                                 <li>
-                                    <p class="tag">Tag-1</p>
+                                    <p class="tag"><?php echo $Status['StatusName']; ?></p>
                                 </li>
-                                <li>
-                                    <p class="tag">Tag-2</p>
-                                </li>
-                                <li>
-                                    <p class="tag">Tag-3</p>
-                                </li>
-                                <li>
-                                    <p class="tag">Tag-4</p>
-                                </li>
-                                <li>
-                                    <p class="tag">Tag-5</p>
-                                </li>
+                            <?php
+                            }
+                            ?>
+                                <!-- TagDB Show -->
                             </ul>
                         </li>
                     </ul>
@@ -66,23 +71,17 @@
                 <div class="input-box">
                     <ul>
                         <li class="menu-item2">
-                            <p>Tag<i class="fa-solid fa-caret-down"></i></p>
+                            <p>EmotionTag<i class="fa-solid fa-caret-down"></i></p>
                             <ul class="dropdown">
+                            <?php
+                                while ($Emo = mysqli_fetch_assoc($queryEmo)) {
+                            ?>
                                 <li>
-                                    <p class="tag-2">Tag-1</p>
+                                    <p class="tag2"><?php echo $Emo['EmoName']; ?></p>
                                 </li>
-                                <li>
-                                    <p class="tag-2">Tag-2</p>
-                                </li>
-                                <li>
-                                    <p class="tag-2">Tag-3</p>
-                                </li>
-                                <li>
-                                    <p class="tag-2">Tag-4</p>
-                                </li>
-                                <li>
-                                    <p class="tag-2">Tag-5</p>
-                                </li>
+                            <?php
+                            }
+                            ?>
                             </ul>
                         </li>
                     </ul>
@@ -168,7 +167,7 @@
     });
 
     confirm.addEventListener("click", () => {
-        window.location.href = '../ChickChatHome/home.html';
+        window.location.href = '../ChickChatHome/home.php';
     })
 
 </script>

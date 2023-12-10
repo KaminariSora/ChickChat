@@ -44,7 +44,7 @@ function applyClothes() {
     var selectedClothes = selectedClothesButton.querySelector("img").src;
     console.log(selectedClothes);
     localStorage.setItem("selectedClothes", selectedClothes);
-    window.location.href = "Dressing.html";
+    window.location.href = "Dressing.php";
 }
 
 shop = document.querySelector('.shop');
