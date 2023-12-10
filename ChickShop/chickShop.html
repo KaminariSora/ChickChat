@@ -104,18 +104,6 @@
         const confirmBox = document.querySelector('.confirm-box');
         const yes = document.querySelector('.yes');
         const no = document.querySelector('.no');
-        const id1 = document.getElementById('1');
-        const id2 = document.getElementById('2');
-        const id3 = document.getElementById('3');
-        const id4 = document.getElementById('4');
-        const id5 = document.getElementById('5');
-        const id6 = document.getElementById('6');
-        const id7 = document.getElementById('7');
-        const id8 = document.getElementById('8');
-        const id9 = document.getElementById('9');
-        const id10 = document.getElementById('10');
-        const id11 = document.getElementById('11');
-        const id12 = document.getElementById('12');
 
         avatarShopBtn.addEventListener('click', () => {
             console.log('click on avatar shop');
@@ -150,7 +138,6 @@
             yesButton.dataset.clickCount = clickCount;
         }
 
-        // Example of attaching click event to the "YES" button
         const yesButton = document.querySelector('.yes');
         yesButton.addEventListener('click', handleYesClick);
 
@@ -177,25 +164,6 @@
                 console.error(`Element with ID ${itemId} not found.`);
             }
         }
-
-        // id1.addEventListener('click', () => handlePopUp())
-        // id2.addEventListener('click', () => handlePopUp())
-        // id3.addEventListener('click', () => handlePopUp())
-        // id4.addEventListener('click', () => handlePopUp())
-        // id5.addEventListener('click', () => handlePopUp())
-        // id6.addEventListener('click', () => handlePopUp())
-        // id7.addEventListener('click', () => handlePopUp())
-        // id8.addEventListener('click', () => handlePopUp())
-        // id9.addEventListener('click', () => handlePopUp())
-        // id10.addEventListener('click', () => handlePopUp())
-        // id11.addEventListener('click', () => handlePopUp())
-        // id12.addEventListener('click', () => handlePopUp())
-
-
-        // items.forEach((item, index) => {
-        //     console.log(`Count ${index+1}`);
-        //     item.addEventListener('click', () => handlePopUp(index + 1));
-        // })
 
         home.addEventListener('click', () => {
             window.location.href = '../ChickChatHome/home.html';
