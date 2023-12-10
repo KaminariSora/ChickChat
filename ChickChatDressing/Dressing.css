@@ -187,45 +187,13 @@ header img {
     max-width: 320px;
 }
 
-#Select{
-    list-style: none;
+#Status {
     background: var(--box-color);
     min-width: 300px;
     max-width: 320px;
     font-size: 1.2rem;
-}
-
-li:hover {
-    background-color: yellow;
-    cursor: pointer;
-    box-shadow: var(--shadow);
-}
-
-select li {
-    display: block;
-    position: relative;
-}
-
-select li p {
-    display: block;
     padding: 10px;
-}
-
-select.dropdown li {
-    display: block;
-}
-
-select.dropdown {
-    width: 100%;
-    position: absolute;
-    z-index: 999;
-    display: none;
-    transition: .5s ease;
-    box-shadow: var(--shadow);
-}
-
-select.dropdown li:hover {
-    background: var(--base-color);
+    border: none;
 }
 
 p i {

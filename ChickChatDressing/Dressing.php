@@ -26,6 +26,24 @@ if(!isset($_SESSION['UserID'])){
     <title>Dressing Page</title>
     <link rel="stylesheet" href="Dressing.css">
     <script src="https://kit.fontawesome.com/26997adfb2.js" crossorigin="anonymous"></script>
+    <style>
+        #Status {
+            background: var(--box-color);
+            min-width: 300px;
+            max-width: 320px;
+            font-size: 1.2rem;
+            padding: 10px;
+            border: none;
+        }
+
+        #Status:hover {
+            background: yellow;
+        }
+
+        #Status option {
+            background: var(--box-color);
+        }
+    </style>
 </head>
 
 <body>
@@ -52,10 +70,10 @@ if(!isset($_SESSION['UserID'])){
         <div class="box box-2">
             <div class="avatar-container">
                 <div id="faceDiv" class="avatar-div">
-                    <!-- Face DB content goes here -->
+                    <!-- Face content goes here -->
                 </div>
                 <div id="clothesDiv" class="avatar-div">
-                    <!-- Clothes DB content goes here -->
+                    <!-- Clothes content goes here -->
                 </div>
             </div>
             <form action="">
@@ -66,53 +84,26 @@ if(!isset($_SESSION['UserID'])){
             </form>
         </div>
         <div class="box box-3">
-            <form action="Dressing_DB.php" method = 'POST'>
+            <form action="Dressing_DB.php" method = "POST">
                 <div class="input-box">
-                    <ul>
-                        <li class="menu-item">
-                            <p>StatusTag<i class="fa-solid fa-caret-down"></i></p>
-                            <ul class="dropdown" name = 'Status' >
-
-                                <!-- TagDB Show -->
-                            </ul>
-                        </li>
-                    </ul>
-                    <select name="" id="Status">
-                        <option value="">Tag-1</option>
-                        <option value="">Tag-2</option>
-                        <option value="">Tag-3</option>
-                        <option value="">Tag-4</option>
-                        <option value="">Tag-5</option>
-                        <option value="">Tag-1</option>
-                        <option value="">Tag-1</option>
+                    <select name="Status" id="Status">
+                        <?php while($Status = mysqli_fetch_assoc($queryStatus)){?>
+                            <option value="<?php echo $Status['StatusID']?>"><?php echo $Status['StatusName']?></option>
+                        <?php }?>
                     </select>
                 </div>
                 <div class="input-box">
-                    <ul>
-                        <li class="menu-item2">
-                            <p>EmotionTag<i class="fa-solid fa-caret-down"></i></p>
-                            <select name = "Emotion">
-                                    <?php
-                                        while ($Emo = mysqli_fetch_assoc($queryEmo)) {
-                                    ?>
-                                        <option values = "<?php echo $Emo['EmoID']?>">
-                                            <p class="tag-2" >
-                                                <?php echo $Emo['EmoName']; ?>
-                                            </p>
-                                        </option>
-                                    <?php
-                                    }
-                                    ?>
-                            <!-- Emotag DB Show -->
-                            </select>
-                        </li>
-                    </ul>
+                    <select name="Emotion" id="Status">
+                        <?php while($Emotion = mysqli_fetch_assoc($queryEmo)){?>
+                            <option value="<?php echo $Emotion['EmotionID']?>"><?php echo $Emotion['EmoName']?></option>
+                        <?php }?>
+                    </select>
                 </div>
                 <div class="input-box description">
-                    <textarea id="message" name="message" rows="8"></textarea>
+                    <textarea id="message" name="message" rows="8" ></textarea>
                     <label for="message">Description</label>
                 </div>
-                <button type = 'submit' class="confirm" name = 'comfirm'>confirm</button>
+                <button class="confirm" type = "submit" name = "confirm">confirm</button>
             </form>
         </div>
     </div>
@@ -139,19 +130,6 @@ if(!isset($_SESSION['UserID'])){
         window.location.href = 'clothes.html';
     })
 
-    tagItems.forEach(tagItem => {
-        tagItem.addEventListener("click", function () {
-            tagText.innerHTML = tagItem.textContent + `<i class="fa-solid fa-caret-up"></i>`;
-        });
-    });
-
-    tagItems2.forEach(tagItem2 => {
-        tagItem2.addEventListener("click", function () {
-            tagText2.innerHTML = tagItem2.textContent + `<i class="fa-solid fa-caret-up"></i>`;
-        });
-    });
-
-
     $(document).ready(function () {
         $(".menu-item").click(function () {
             $(this).find(".dropdown").toggle();
@@ -164,34 +142,10 @@ if(!isset($_SESSION['UserID'])){
         });
     });
 
-    document.addEventListener('DOMContentLoaded', function () {
-        const menuItems = document.querySelectorAll('.menu-item');
+    // confirm.addEventListener("click", () => {
+    //     window.location.href = '../ChickChatHome/home.html';
+    // })
 
-        menuItems.forEach(function (menuItem) {
-            menuItem.addEventListener('click', function () {
-                const icon = this.querySelector('.fa-solid');
-                icon.classList.toggle('fa-caret-down');
-                icon.classList.toggle('fa-caret-up');
-            });
-        });
-    });
-
-    document.addEventListener('DOMContentLoaded', function () {
-        const menuItems = document.querySelectorAll('.menu-item2');
-
-        menuItems.forEach(function (menuItem) {
-            menuItem.addEventListener('click', function () {
-                const icon = this.querySelector('.fa-solid');
-                icon.classList.toggle('fa-caret-down');
-                icon.classList.toggle('fa-caret-up');
-            });
-        });
-    });
-
-    confirm.addEventListener("click", () => {
-        window.location.href = '../ChickChatDressing/Dressing.php';
-    })
-    ///แก้เป็น home
 </script>
 </body>
 
