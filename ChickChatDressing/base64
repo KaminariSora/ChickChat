@@ -1,0 +1,9 @@
+import base64
+import pyperclip
+
+with open("ChickChatDressing/image/Dressing.PNG", "rb") as image_file:
+    base64_image = base64.b64encode(image_file.read()).decode('utf-8')
+
+# Copy the base64 encoded image to the clipboard
+pyperclip.copy(base64_image)
+print("Base64 image copied to the clipboard")
