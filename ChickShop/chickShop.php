@@ -1,3 +1,11 @@
+<?php 
+   session_start();
+   include("../server/connect.php");
+
+   $Cardsql = "SELECT * FROM profile WHERE profileId = {$_SESSION['UserID']} ";
+   $CardQuery = mysqli_query($connect,$Cardsql);
+   $CardData = mysqli_fetch_assoc($CardQuery);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,10 +26,16 @@
             <button class="no">NO</button>
         </div>
     </div>
+    <div class="successful">
+        <div class="successful-title">การซื้อเสร็จสิ้น</div>
+        <div class="successful-button">
+            <button class="ok">OK</button>
+        </div>
+    </div>
     <header>
         <img src="image/IMG_1012.PNG" class="logo">
         <div class="chicken">
-            <p>${Number}</p>
+            <p><?php echo $CardData['Chick_count']?></p>
             <img src="image/IMG_0991.PNG" alt="none">
         </div>
     </header>
@@ -62,27 +76,27 @@
         <div class="shop-zone chick-shop">
             <div class="wrapper">
                 <div class="item" id="7">
-                    <img src="image/IMG_0993.PNG" alt="">
+                    <img src="../ImageAsset/package/Pack1.PNG" alt="">
                     <div class="price">${Price}</div>
                 </div>
                 <div class="item" id="8">
-                    <img src="image/IMG_0993.PNG" alt="">
+                    <img src="../ImageAsset/package/Pack2.PNG" alt="">
                     <div class="price">${Price}</div>
                 </div>
                 <div class="item" id="9">
-                    <img src="image/IMG_0993.PNG" alt="">
+                    <img src="../ImageAsset/package/Pack3.PNG" alt="">
                     <div class="price">${Price}</div>
                 </div>
                 <div class="item" id="10">
-                    <img src="image/IMG_0993.PNG" alt="">
+                    <img src="../ImageAsset/package/Pack4.PNG" alt="">
                     <div class="price">${Price}</div>
                 </div>
                 <div class="item" id="11">
-                    <img src="image/IMG_0993.PNG" alt="">
+                    <img src="../ImageAsset/package/Pack5.PNG" alt="">
                     <div class="price">${Price}</div>
                 </div>
                 <div class="item" id="12">
-                    <img src="image/IMG_0993.PNG" alt="">
+                    <img src="../ImageAsset/package/Pack6.PNG" alt="">
                     <div class="price">${Price}</div>
                 </div>
             </div>
@@ -102,20 +116,9 @@
         const home = document.getElementById('home');
         const items = document.querySelectorAll('.item');
         const confirmBox = document.querySelector('.confirm-box');
+        const successful = document.querySelector('.successful');
         const yes = document.querySelector('.yes');
         const no = document.querySelector('.no');
-        const id1 = document.getElementById('1');
-        const id2 = document.getElementById('2');
-        const id3 = document.getElementById('3');
-        const id4 = document.getElementById('4');
-        const id5 = document.getElementById('5');
-        const id6 = document.getElementById('6');
-        const id7 = document.getElementById('7');
-        const id8 = document.getElementById('8');
-        const id9 = document.getElementById('9');
-        const id10 = document.getElementById('10');
-        const id11 = document.getElementById('11');
-        const id12 = document.getElementById('12');
 
         avatarShopBtn.addEventListener('click', () => {
             console.log('click on avatar shop');
@@ -136,9 +139,8 @@
         });
 
         function handleYesClick() {
-            console.log('Confirm for Item.');
+            console.log(`Confirm.`);
 
-            // Decrease the count and remove the event listener after three clicks
             const yesButton = document.querySelector('.yes');
             let clickCount = parseInt(yesButton.dataset.clickCount) || 0;
             clickCount++;
@@ -146,11 +148,14 @@
             if (clickCount >= 100) {
                 yesButton.removeEventListener('click', handleYesClick);
             }
+            
+            confirmBox.classList.remove('active');
+            successful.classList.add('active');
+            ok.addEventListener('click', handleOK);
 
             yesButton.dataset.clickCount = clickCount;
         }
 
-        // Example of attaching click event to the "YES" button
         const yesButton = document.querySelector('.yes');
         yesButton.addEventListener('click', handleYesClick);
 
@@ -162,6 +167,11 @@
             no.addEventListener('click', () => {
                 confirmBox.classList.remove('active');
             })
+        }
+
+        function handleOK() {
+            successful.classList.remove('active');
+            console.log("successful");
         }
 
         for (let i = 1; i <= 12; i++) {
@@ -178,27 +188,8 @@
             }
         }
 
-        // id1.addEventListener('click', () => handlePopUp())
-        // id2.addEventListener('click', () => handlePopUp())
-        // id3.addEventListener('click', () => handlePopUp())
-        // id4.addEventListener('click', () => handlePopUp())
-        // id5.addEventListener('click', () => handlePopUp())
-        // id6.addEventListener('click', () => handlePopUp())
-        // id7.addEventListener('click', () => handlePopUp())
-        // id8.addEventListener('click', () => handlePopUp())
-        // id9.addEventListener('click', () => handlePopUp())
-        // id10.addEventListener('click', () => handlePopUp())
-        // id11.addEventListener('click', () => handlePopUp())
-        // id12.addEventListener('click', () => handlePopUp())
-
-
-        // items.forEach((item, index) => {
-        //     console.log(`Count ${index+1}`);
-        //     item.addEventListener('click', () => handlePopUp(index + 1));
-        // })
-
         home.addEventListener('click', () => {
-            window.location.href = '../ChickChatHome/home.html';
+            window.location.href = '../ChickChatHome/home.php';
         })
     </script>
 </body>

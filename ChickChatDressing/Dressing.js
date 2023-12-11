@@ -10,3 +10,4 @@ if (!selectedFace) {
 console.log("Information :", selectedFace);
 faceDiv.style.backgroundImage = "url('" + selectedFace + "')";
 clothesDiv.style.backgroundImage = "url('" + selectedClothes + "')";
+
