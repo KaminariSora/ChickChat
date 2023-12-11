@@ -51,10 +51,11 @@
         .red {
             color: red;
         }
-        
+
         .blue {
             color: blue;
         }
+
         /*
 ! tailwindcss v3.3.5 | MIT License | https://tailwindcss.com
 */
@@ -62,10 +63,10 @@
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
-        
+
         *,
-         ::before,
-         ::after {
+        ::before,
+        ::after {
             box-sizing: border-box;
             /* 1 */
             border-width: 0;
@@ -75,11 +76,12 @@
             border-color: #e5e7eb;
             /* 2 */
         }
-        
-         ::before,
-         ::after {
+
+        ::before,
+        ::after {
             --tw-content: '';
         }
+
         /*
 1. Use a consistent sensible line-height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
@@ -88,7 +90,7 @@
 5. Use the user's configured `sans` font-feature-settings by default.
 6. Use the user's configured `sans` font-variation-settings by default.
 */
-        
+
         html {
             line-height: 1.5;
             /* 1 */
@@ -106,23 +108,25 @@
             font-variation-settings: normal;
             /* 6 */
         }
+
         /*
 1. Remove the margin in all browsers.
 2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
 */
-        
+
         body {
             margin: 0;
             /* 1 */
             line-height: inherit;
             /* 2 */
         }
+
         /*
 1. Add the correct height in Firefox.
 2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
 3. Ensure horizontal rules are visible by default.
 */
-        
+
         hr {
             height: 0;
             /* 1 */
@@ -131,18 +135,20 @@
             border-top-width: 1px;
             /* 3 */
         }
+
         /*
 Add the correct text decoration in Chrome, Edge, and Safari.
 */
-        
+
         abbr:where([title]) {
             -webkit-text-decoration: underline dotted;
             text-decoration: underline dotted;
         }
+
         /*
 Remove the default font size and weight for headings.
 */
-        
+
         h1,
         h2,
         h3,
@@ -152,27 +158,30 @@ Remove the default font size and weight for headings.
             font-size: inherit;
             font-weight: inherit;
         }
+
         /*
 Reset links to optimize for opt-in styling instead of opt-out.
 */
-        
+
         a {
             color: inherit;
             text-decoration: inherit;
         }
+
         /*
 Add the correct font weight in Edge and Safari.
 */
-        
+
         b,
         strong {
             font-weight: bolder;
         }
+
         /*
 1. Use the user's configured `mono` font family by default.
 2. Correct the odd `em` font sizing in all browsers.
 */
-        
+
         code,
         kbd,
         samp,
@@ -182,17 +191,19 @@ Add the correct font weight in Edge and Safari.
             font-size: 1em;
             /* 2 */
         }
+
         /*
 Add the correct font size in all browsers.
 */
-        
+
         small {
             font-size: 80%;
         }
+
         /*
 Prevent `sub` and `sup` elements from affecting the line height in all browsers.
 */
-        
+
         sub,
         sup {
             font-size: 75%;
@@ -200,20 +211,21 @@ Prevent `sub` and `sup` elements from affecting the line height in all browsers.
             position: relative;
             vertical-align: baseline;
         }
-        
+
         sub {
             bottom: -0.25em;
         }
-        
+
         sup {
             top: -0.5em;
         }
+
         /*
 1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
 2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
 3. Remove gaps between table borders by default.
 */
-        
+
         table {
             text-indent: 0;
             /* 1 */
@@ -222,12 +234,13 @@ Prevent `sub` and `sup` elements from affecting the line height in all browsers.
             border-collapse: collapse;
             /* 3 */
         }
+
         /*
 1. Change the font styles in all browsers.
 2. Remove the margin in Firefox and Safari.
 3. Remove default padding in all browsers.
 */
-        
+
         button,
         input,
         optgroup,
@@ -252,19 +265,21 @@ Prevent `sub` and `sup` elements from affecting the line height in all browsers.
             padding: 0;
             /* 3 */
         }
+
         /*
 Remove the inheritance of text transform in Edge and Firefox.
 */
-        
+
         button,
         select {
             text-transform: none;
         }
+
         /*
 1. Correct the inability to style clickable types in iOS and Safari.
 2. Remove default button styles.
 */
-        
+
         button,
         [type='button'],
         [type='reset'],
@@ -276,75 +291,84 @@ Remove the inheritance of text transform in Edge and Firefox.
             background-image: none;
             /* 2 */
         }
+
         /*
 Use the modern Firefox focus style for all focusable elements.
 */
-        
-         :-moz-focusring {
+
+        :-moz-focusring {
             outline: auto;
         }
+
         /*
 Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
 */
-        
-         :-moz-ui-invalid {
+
+        :-moz-ui-invalid {
             box-shadow: none;
         }
+
         /*
 Add the correct vertical alignment in Chrome and Firefox.
 */
-        
+
         progress {
             vertical-align: baseline;
         }
+
         /*
 Correct the cursor style of increment and decrement buttons in Safari.
 */
-        
-         ::-webkit-inner-spin-button,
-         ::-webkit-outer-spin-button {
+
+        ::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button {
             height: auto;
         }
+
         /*
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
-        
+
         [type='search'] {
             -webkit-appearance: textfield;
             /* 1 */
             outline-offset: -2px;
             /* 2 */
         }
+
         /*
 Remove the inner padding in Chrome and Safari on macOS.
 */
-        
-         ::-webkit-search-decoration {
+
+        ::-webkit-search-decoration {
             -webkit-appearance: none;
         }
+
         /*
 1. Correct the inability to style clickable types in iOS and Safari.
 2. Change font properties to `inherit` in Safari.
 */
-        
-         ::-webkit-file-upload-button {
+
+        ::-webkit-file-upload-button {
             -webkit-appearance: button;
             /* 1 */
             font: inherit;
             /* 2 */
         }
+
         /*
 Add the correct display in Chrome and Safari.
 */
-        
+
         summary {
             display: list-item;
         }
+
         /*
 Removes the default spacing and border for appropriate elements.
 */
-        
+
         blockquote,
         dl,
         dd,
@@ -360,16 +384,16 @@ Removes the default spacing and border for appropriate elements.
         pre {
             margin: 0;
         }
-        
+
         fieldset {
             margin: 0;
             padding: 0;
         }
-        
+
         legend {
             padding: 0;
         }
-        
+
         ol,
         ul,
         menu {
@@ -377,25 +401,28 @@ Removes the default spacing and border for appropriate elements.
             margin: 0;
             padding: 0;
         }
+
         /*
 Reset default styling for dialogs.
 */
-        
+
         dialog {
             padding: 0;
         }
+
         /*
 Prevent resizing textareas horizontally by default.
 */
-        
+
         textarea {
             resize: vertical;
         }
+
         /*
 1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
-        
+
         input::-moz-placeholder,
         textarea::-moz-placeholder {
             opacity: 1;
@@ -403,7 +430,7 @@ Prevent resizing textareas horizontally by default.
             color: #9ca3af;
             /* 2 */
         }
-        
+
         input::placeholder,
         textarea::placeholder {
             opacity: 1;
@@ -411,27 +438,30 @@ Prevent resizing textareas horizontally by default.
             color: #9ca3af;
             /* 2 */
         }
+
         /*
 Set the default cursor for buttons.
 */
-        
+
         button,
         [role="button"] {
             cursor: pointer;
         }
+
         /*
 Make sure disabled buttons don't get the pointer cursor.
 */
-        
-         :disabled {
+
+        :disabled {
             cursor: default;
         }
+
         /*
 1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
 2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
    This can trigger a poorly considered lint error in some tools but is included by design.
 */
-        
+
         img,
         svg,
         video,
@@ -445,24 +475,26 @@ Make sure disabled buttons don't get the pointer cursor.
             vertical-align: middle;
             /* 2 */
         }
+
         /*
 Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
 */
-        
+
         img,
         video {
             max-width: 100%;
             height: auto;
         }
+
         /* Make elements with the HTML hidden attribute stay hidden by default */
-        
+
         [hidden] {
             display: none;
         }
-        
+
         *,
-         ::before,
-         ::after {
+        ::before,
+        ::after {
             --tw-border-spacing-x: 0;
             --tw-border-spacing-y: 0;
             --tw-translate-x: 0;
@@ -511,8 +543,8 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
             --tw-backdrop-saturate: ;
             --tw-backdrop-sepia: ;
         }
-        
-         ::backdrop {
+
+        ::backdrop {
             --tw-border-spacing-x: 0;
             --tw-border-spacing-y: 0;
             --tw-translate-x: 0;
@@ -561,280 +593,320 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
             --tw-backdrop-saturate: ;
             --tw-backdrop-sepia: ;
         }
-        
+
         .relative {
             position: relative;
         }
-        
+
         .sticky {
             position: sticky;
         }
-        
+
         .bottom-8 {
             bottom: 2rem;
         }
-        
+
         .m-2 {
             margin: 0.5rem;
         }
-        
+
         .mx-auto {
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .my-5 {
             margin-top: 1.25rem;
             margin-bottom: 1.25rem;
         }
-        
+
         .ml-5 {
             margin-left: 1.25rem;
         }
-        
+
         .ml-auto {
             margin-left: auto;
         }
-        
+
         .mr-5 {
             margin-right: 1.25rem;
         }
-        
+
         .mt-2 {
             margin-top: 0.5rem;
         }
-        
+
         .block {
             display: block;
         }
-        
+
         .flex {
             display: flex;
         }
-        
+
         .h-10 {
             height: 2.5rem;
         }
-        
+
         .h-\[96\%\] {
             height: 96%;
         }
-        
+
         .h-screen {
             height: 100vh;
         }
-        
+
         .w-0 {
             width: 0px;
         }
-        
+
         .w-10 {
             width: 2.5rem;
         }
-        
+
         .w-4\/6 {
             width: 66.666667%;
         }
-        
+
         .w-\[100\%\] {
             width: 100%;
         }
-        
+
         .w-\[60\%\] {
             width: 60%;
         }
-        
+
         .w-full {
             width: 100%;
         }
-        
+
         .max-w-2xl {
             max-width: 42rem;
         }
-        
+
         .flex-shrink-0 {
             flex-shrink: 0;
         }
-        
+
         .cursor-pointer {
             cursor: pointer;
         }
-        
+
         .justify-end {
             justify-content: flex-end;
         }
-        
+
         .justify-center {
             justify-content: center;
         }
-        
+
         .space-x-3> :not([hidden])~ :not([hidden]) {
             --tw-space-x-reverse: 0;
             margin-right: calc(0.75rem * var(--tw-space-x-reverse));
             margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
         }
-        
+
         .overflow-auto {
             overflow: auto;
         }
-        
+
         .whitespace-normal {
             white-space: normal;
         }
-        
+
         .rounded {
             border-radius: 0.25rem;
         }
-        
+
         .rounded-2xl {
             border-radius: 1rem;
         }
-        
+
         .rounded-full {
             border-radius: 9999px;
         }
-        
+
         .rounded-xl {
             border-radius: 0.75rem;
         }
-        
+
         .rounded-l-2xl {
             border-top-left-radius: 1rem;
             border-bottom-left-radius: 1rem;
         }
-        
+
         .rounded-r-2xl {
             border-top-right-radius: 1rem;
             border-bottom-right-radius: 1rem;
         }
-        
+
         .bg-color01 {
             --tw-bg-opacity: 1;
             background-color: rgb(244 211 94 / var(--tw-bg-opacity));
         }
-        
+
         .bg-color02 {
             --tw-bg-opacity: 1;
             background-color: rgb(238 150 75 / var(--tw-bg-opacity));
         }
-        
+
         .bg-gray-300 {
             --tw-bg-opacity: 1;
             background-color: rgb(209 213 219 / var(--tw-bg-opacity));
         }
-        
+
         .bg-white {
             --tw-bg-opacity: 1;
             background-color: rgb(255 255 255 / var(--tw-bg-opacity));
         }
-        
+
         .p-1 {
             padding: 0.25rem;
         }
-        
+
         .p-2 {
             padding: 0.5rem;
         }
-        
+
         .p-5 {
             padding: 1.25rem;
         }
-        
+
         .px-4 {
             padding-left: 1rem;
             padding-right: 1rem;
         }
-        
+
         .text-center {
             text-align: center;
         }
-        
+
         .text-start {
             text-align: start;
         }
-        
+
         .font-cherry {
             font-family: Cherry Bomb One;
         }
-        
+
         .text-3xl {
             font-size: 1.875rem;
             line-height: 2.25rem;
         }
-        
+
         .uppercase {
             text-transform: uppercase;
         }
-        
+
         .underline {
             text-decoration-line: underline;
         }
-        
+
         .decoration-wavy {
             text-decoration-style: wavy;
         }
-        
+
         .filter {
             filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
         }
 
-        #message-input {
+        #send-container {
             position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .input-zone {
+            display: flex;
+            align-items: center;
+        }
+
+        #message-input {
+            flex: 1;
+        }
+
+        #emo-button {
+            position: absolute;
+            right: 40px;
+            margin: 10px;
+        }
+
+        #send-button {
+            position: absolute;
+            right: 20px;
+            margin-left: 10px;
+        }
+
+        /* #message-input {
             display: flex;
             align-items: center;
             justify-content: center;
+            position: absolute;
             bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
             width: 80%;
         }
-
+        
         #send-button {
             position: absolute;
-            bottom: 10px;
+            bottom: 15px;
             right: 10%;
-        }
+        } */
 
         @media (max-width: 1024px) {
+
             .home,
             .random-chat {
                 display: none;
             }
         }
-        
+
         @media (min-width: 1024px) {
             .lg\:bottom-10 {
                 bottom: 2.5rem;
             }
+
             .lg\:my-5 {
                 margin-top: 1.25rem;
                 margin-bottom: 1.25rem;
             }
+
             .lg\:ml-1 {
                 margin-left: 0.25rem;
             }
+
             .lg\:ml-5 {
                 margin-left: 1.25rem;
             }
+
             .lg\:mr-1 {
                 margin-right: 0.25rem;
             }
+
             .lg\:w-1\/5 {
                 width: 20%;
             }
+
             .lg\:w-4\/5 {
                 width: 80%;
             }
+
             .lg\:w-full {
                 width: 100%;
             }
+
             .lg\:rounded-2xl {
                 border-radius: 1rem;
             }
+
             .lg\:bg-white {
                 --tw-bg-opacity: 1;
                 background-color: rgb(255 255 255 / var(--tw-bg-opacity));
             }
+
             .lg\:p-5 {
                 padding: 1.25rem;
             }
@@ -846,16 +918,17 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 <body>
     <div class="bg-color01">
         <div class="flex h-screen">
-            <div class="w-0 lg:w-1/5 lg:profileBox lg:bg-white lg:ml-5 lg:mr-1 lg:my-5 lg:rounded-2xl lg:p-5" id="container">
-                <!-- <a href="#"><img src="../assets/cc_logo.PNG" class="logo"></a> -->
-                <img src="assets/cc_logo.PNG" class="logo">
+            <div class="w-0 lg:w-1/5 lg:profileBox lg:bg-white lg:ml-5 lg:mr-1 lg:my-5 lg:rounded-2xl lg:p-5"
+                id="container">
+                <a href="#"><img src="../assets/cc_logo.PNG" class="logo"></a>
+                <!-- <img src="assets/cc_logo.PNG" class="logo"> -->
 
                 <div class="home"><i class="fa-solid fa-house"></i></div>
                 <button class="random-chat">Random chat</button>
             </div>
             <div class="w-full lg:w-4/5 chatBox bg-color02 mr-5 ml-5 lg:ml-1 my-5 rounded-2xl p-5 relative">
                 <h3 class="text-center text-3xl font-cherry"> Chickchat </h3>
-                <div class="overflow-auto h-[96%] m-2">
+                <div class="overflow-auto m-2" style="height: 90%;">
                     <div id="message-container"> </div>
                     <!-- คู่สนทนา -->
                     <!-- <div class="flex w-4/6 lg:w-full mt-2 space-x-3 max-w-2xl">
@@ -890,9 +963,16 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 
                     <div class="w-[90%] flex justify-center bottom-8 lg:bottom-10 form-input mt-2" name="buttomChat">
                         <form id="send-container">
-                            <input type="text" id="message-input" class="w-[60%] rounded-xl bg-white mx-auto p-1 px-4" required></input>
-                            <img src="./assets/emojiChat.png" class="block" alt="Emoji Button" onclick="alert('เด้ง Modal จ้า')">
-                            <button type="submit" id="send-button" class="rounded-full">Send</button>
+                            <div class="input-zone">
+                                <input type="text" id="message-input"
+                                    class="w-[60%] rounded-xl bg-white mx-auto p-1 px-4" required></input>
+                                <!-- <img src="./assets/emojiChat.png" class="block" alt=""
+                                    onclick="alert('เด้ง Modal จ้า')"> -->
+                                <button type="submit" id="emo-button" class="rounded-full"><i 
+                                        class="fa-solid fa-face-smile"></i></button>
+                                <button type="submit" id="send-button" class="rounded-full"><i
+                                        class="fa-solid fa-arrow-right"></i></button>
+                            </div>
                         </form>
 
                         <!-- <div class="w-[100%] justify-center fixed bottom-0 lg:bottom-10 rounded form-input mt-5" name="buttomChat"> -->
