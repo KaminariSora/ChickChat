@@ -116,7 +116,9 @@ header {
     object-fit: cover; 
 }
 
-.slider-wrapper .image-list .Create_avatar .image-item {
+.slider-wrapper .image-list .Create_avatar .image-item ,
+.slider-wrapper .image-list .AvatarShop .image-item,
+.slider-wrapper .image-list .ChickShop .image-item {
     width: 600px;
     object-fit: contain;
 }
