@@ -20,7 +20,7 @@ $query = mysqli_query($connect,$user_check_query);
 $result = mysqli_fetch_assoc($query);
 //query old data form DB
 
-if($result['Username'] === $username){
+if(!(mysqli_num_rows($query)) == 1){
         $_SESSION['error'] = 'Username already exist';
         header('location: login.php');
 }

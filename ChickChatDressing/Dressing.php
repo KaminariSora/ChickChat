@@ -76,15 +76,19 @@ if(!isset($_SESSION['UserID'])){
                     <!-- Clothes content goes here -->
                 </div>
             </div>
-            <form action="Dressing_DB.php" method = 'POST' >
+            <!-- start form1 -->
+            <form action="Dressing_DB.php" method = 'POST' id = 'form1'>
                 <div class=" input-box Name">
-                    <input type="text" id = 'name' required>
+                    <input type="text" name = "input">
                     <label>Enter Your Name <i class="fa-solid fa-pencil"></i></label>
                 </div>
+                <button type="submit">save Avatar Name</button>
             </form>
+            <!-- end form1 -->
         </div>
         <div class="box box-3">
-            <form action="Dressing_DB.php" method = "POST">
+            <!-- start form2 -->
+            <form action="Dressing_DB.php" method = "POST"  id ='form2'>
                 <div class="input-box">
 
                     <select name="Status" id="Status">
@@ -107,8 +111,10 @@ if(!isset($_SESSION['UserID'])){
                     <textarea id="message" name="message" rows="8" ></textarea>
                     <label for="message">Description</label>
                 </div>
-                <button class="confirm" type = "submit" name = "confirm">confirm</button>
+                   <!-- show Description -->
+                   <button class="confirm" type = "submit" name = "confirm" id = 'submitBtn' >confirm</button>
             </form>
+            <!-- end form2 -->
         </div>
     </div>
 
