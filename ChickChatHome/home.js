@@ -12,8 +12,20 @@ const messageContainer = document.querySelector('.message-container');
 
 mail.addEventListener('click', () => {
     messageContainer.classList.add('active');
-})
+});
 
 closeMessage.addEventListener('click', () => {
     messageContainer.classList.remove('active');
-})
+});
+
+
+
+const random = document.querySelector('.random');
+
+random.addEventListener('click', () => {
+
+    window.location.href = "http://localhost:"+5000 +"/"+Data;
+
+
+
+});
