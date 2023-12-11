@@ -810,6 +810,10 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
             filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
         }
 
+        .logo {
+            width: 100%;
+        }
+
         #send-container {
             position: absolute;
             bottom: 0;
@@ -839,29 +843,46 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
             margin-left: 10px;
         }
 
-        /* #message-input {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
+        .active {
+            display: grid !important;
         }
-        
-        #send-button {
+
+        .sticker-box {
             position: absolute;
-            bottom: 15px;
-            right: 10%;
-        } */
+            bottom: 50px;
+            right: 10px;
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            width: 50%;
+            /* height: 50%; */
+            background: white;
+        }
+
+        .stk {
+            height: 1fr;
+            width: 1fr;
+        }
+
+        .stk:hover {
+            background: yellow;
+        }
 
         @media (max-width: 1024px) {
-
             .home,
             .random-chat {
                 display: none;
             }
+
+            .sticker-box {
+            position: absolute;
+            bottom: 50px;
+            right: 10px;
+            display: none;
+            grid-template-columns: repeat(3, 1fr);
+            width: 80%;
+            /* height: 50%; */
+            background: white;
+        }
         }
 
         @media (min-width: 1024px) {
@@ -918,6 +939,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 <body>
     <div class="bg-color01">
         <div class="flex h-screen">
+            <!-- กรอบซ้าย -->
             <div class="w-0 lg:w-1/5 lg:profileBox lg:bg-white lg:ml-5 lg:mr-1 lg:my-5 lg:rounded-2xl lg:p-5"
                 id="container">
                 <a href="#"><img src="../assets/cc_logo.PNG" class="logo"></a>
@@ -926,64 +948,72 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                 <div class="home"><i class="fa-solid fa-house"></i></div>
                 <button class="random-chat">Random chat</button>
             </div>
+
+            <!-- ช่องแชทตรงกลาง -->
             <div class="w-full lg:w-4/5 chatBox bg-color02 mr-5 ml-5 lg:ml-1 my-5 rounded-2xl p-5 relative">
                 <h3 class="text-center text-3xl font-cherry"> Chickchat </h3>
+                <!-- ส่วนข้อความ -->
                 <div class="overflow-auto m-2" style="height: 90%;">
-                    <div id="message-container"> </div>
-                    <!-- คู่สนทนา -->
-                    <!-- <div class="flex w-4/6 lg:w-full mt-2 space-x-3 max-w-2xl">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300 cursor-pointer"></div>
-                            <div class="bg-white p-2 rounded-r-2xl">
-                                <p class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eius voluptatem libero ab iste qui odio aut, fugit, earum itaque autem, repellat perferendis. At recusandae earum laboriosam, ad perspiciatis harum.</p>
-                            </div>
-                        </div> -->
-                    <!-- เรา -->
-                    <!-- <div class="flex w-4/6 lg:w-full mt-2 space-x-3 max-w-2xl ml-auto justify-end mr-5">
-                            <div class="bg-white p-2 rounded-l-2xl">
-                                <p class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eius voluptatem libero ab iste qui odio aut, fugit, earum itaque autem, repellat perferendis. At recusandae earum laboriosam, ad perspiciatis harum.</p>
-                            </div>
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300 cursor-pointer"></div>
-                        </div>
-                    </div> -->
-                    <!-- คู่สนทนา -->
-                    <!-- <div class="flex w-4/6 lg:w-full mt-2 space-x-3 max-w-2xl">
-                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300 cursor-pointer"></div>
-                        <div class="bg-white p-2 rounded-r-2xl">
-                            <p class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eius voluptatem libero ab iste qui odio aut, fugit, earum itaque autem, repellat perferendis. At recusandae earum laboriosam, ad perspiciatis harum.</p>
-                        </div>
-                    </div> -->
-                    <!-- เรา -->
-                    <!-- <div class="flex w-4/6 lg:w-full mt-2 space-x-3 max-w-2xl ml-auto justify-end mr-5">
-                        <div class="bg-white p-2 rounded-l-2xl">
-                            <p class="text-start">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eius voluptatem libero ab iste qui odio aut, fugit, earum itaque autem, repellat perferendis. At recusandae earum laboriosam, ad perspiciatis harum.</p>
-                        </div>
-                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-gray-300 cursor-pointer"></div>
-                    </div> -->
+                    <!-- กล่อง sticker -->
+                    <div class="sticker-box">
+                        <button><img src="../image/IMG_0991.PNG" class="stk"></button>
+                        <button><img src="../image/IMG_0993.PNG" class="stk"></button>
+                        <button><img src="../image/IMG_0994.PNG" class="stk"></button>
+                        <button><img src="../image/IMG_0995.PNG" class="stk"></button>
+                        <button><img src="../image/IMG_0996.PNG" class="stk"></button>
+                        <button><img src="../image/IMG_0997.PNG" class="stk"></button>
+                    </div>
+                    <div id="message-container">
 
+                    </div>
 
                     <div class="w-[90%] flex justify-center bottom-8 lg:bottom-10 form-input mt-2" name="buttomChat">
                         <form id="send-container">
                             <div class="input-zone">
                                 <input type="text" id="message-input"
                                     class="w-[60%] rounded-xl bg-white mx-auto p-1 px-4" required></input>
-                                <!-- <img src="./assets/emojiChat.png" class="block" alt=""
-                                    onclick="alert('เด้ง Modal จ้า')"> -->
-                                <button type="submit" id="emo-button" class="rounded-full"><i 
+                                <button type="submit" id="emo-button" class="emotion"><i
                                         class="fa-solid fa-face-smile"></i></button>
                                 <button type="submit" id="send-button" class="rounded-full"><i
                                         class="fa-solid fa-arrow-right"></i></button>
                             </div>
                         </form>
 
-                        <!-- <div class="w-[100%] justify-center fixed bottom-0 lg:bottom-10 rounded form-input mt-5" name="buttomChat"> -->
-                        <!-- <input type="text" class="w-[60%] rounded-xl bg-white mx-auto p-1 px-4" type="text" id="message" required> -->
-                        <!-- <button type="submit">Send</button> -->
-                        <!-- </div> -->
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
+    <script>
+        const home = document.querySelector('.home');
+        const random = document.querySelector('.random-chat');
+        const emotion = document.querySelector('.emotion');
+        const stickerBox = document.querySelector('.sticker-box');
+
+        home.addEventListener('click', homeButton);
+        random.addEventListener('click', handleRandom);
+        emotion.addEventListener('click', stickerBoxAction);
+
+        function homeButton() {
+            console.log('home button');
+            window.location.href = '../ChickChatHome/home.php';
+        }
+
+        function handleRandom() {
+            console.log('random');
+        }
+
+        function stickerBoxAction() {
+            if(stickerBox.classList.contains('active')) {
+                console.log('close sticker box.');
+                stickerBox.classList.remove('active');
+            } else {
+                console.log('pop up sticker');
+                stickerBox.classList.add('active');
+            }
+        }
+    </script>
 </body>
 
 
