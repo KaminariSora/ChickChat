@@ -17,7 +17,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/26997adfb2.js" crossorigin="anonymous"></script>
     <style>
+        #container {
+            position: relative;
+            display: flex;
+        }
+
+        .home {
+            position: absolute;
+            bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .random-chat {
+            position: absolute;
+            bottom: 10px;
+            left: 30%;
+            width: 60%;
+            background: rgba(238, 150, 075);
+            font-size: 1.5rem;
+            border-radius: 20px;
+        }
+
+        .home:hover {
+            color: yellow;
+        }
+
+        .random-chat:hover {
+            background: yellow;
+        }
+
         .red {
             color: red;
         }
@@ -747,6 +777,30 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
         .filter {
             filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
         }
+
+        #message-input {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+        }
+
+        #send-button {
+            position: absolute;
+            bottom: 10px;
+            right: 10%;
+        }
+
+        @media (max-width: 1024px) {
+            .home,
+            .random-chat {
+                display: none;
+            }
+        }
         
         @media (min-width: 1024px) {
             .lg\:bottom-10 {
@@ -792,8 +846,12 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
 <body>
     <div class="bg-color01">
         <div class="flex h-screen">
-            <div class="w-0 lg:w-1/5 lg:profileBox lg:bg-white lg:ml-5 lg:mr-1 lg:my-5 lg:rounded-2xl lg:p-5">
-                <a href="/"><img src="/assets/cc_logo.png" class="logo"></a>
+            <div class="w-0 lg:w-1/5 lg:profileBox lg:bg-white lg:ml-5 lg:mr-1 lg:my-5 lg:rounded-2xl lg:p-5" id="container">
+                <!-- <a href="#"><img src="../assets/cc_logo.PNG" class="logo"></a> -->
+                <img src="assets/cc_logo.PNG" class="logo">
+
+                <div class="home"><i class="fa-solid fa-house"></i></div>
+                <button class="random-chat">Random chat</button>
             </div>
             <div class="w-full lg:w-4/5 chatBox bg-color02 mr-5 ml-5 lg:ml-1 my-5 rounded-2xl p-5 relative">
                 <h3 class="text-center text-3xl font-cherry"> Chickchat </h3>
@@ -833,7 +891,7 @@ Constrain images and videos to the parent width and preserve their intrinsic asp
                     <div class="w-[90%] flex justify-center bottom-8 lg:bottom-10 form-input mt-2" name="buttomChat">
                         <form id="send-container">
                             <input type="text" id="message-input" class="w-[60%] rounded-xl bg-white mx-auto p-1 px-4" required></input>
-                            <!-- <img src="./assets/emojiChat.png" class="block" alt="Emoji Button" onclick="alert('เด้ง Modal จ้า')"> -->
+                            <img src="./assets/emojiChat.png" class="block" alt="Emoji Button" onclick="alert('เด้ง Modal จ้า')">
                             <button type="submit" id="send-button" class="rounded-full">Send</button>
                         </form>
 
