@@ -1,124 +1,149 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const socket = io('http://localhost:3000');
-    const messageContainer = document.getElementById('message-container');
-    const roomContainer = document.getElementById('room-container');
-    const messageForm = document.getElementById('send-container');
-    const messageInput = document.getElementById('message-input');
-    let currentUserName;
-    const app = document.querySelector('.app');
-    const stickerButtons = document.querySelectorAll('.sticker-box .stk');
+const socket = io('http://localhost:3000')
+const messageContainer = document.getElementById('message-container')
+const roomContainer = document.getElementById('room-container')
+const messageForm = document.getElementById('send-container')
+const messageInput = document.getElementById('message-input')
+let currentUserName;
+const stickerButtons = document.querySelectorAll('.sticker-box .stk');
 
-    stickerButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            const imageSrc = this.querySelector('img').src; // Get the image source
-            console.log(imageSrc);
-            sendMessage('image', imageSrc); // Assuming you have a function to send messages
-        });
-    });
 
-    messageForm.addEventListener('submit', function (e) {
+if (messageForm != null) {
+    const name = prompt('What is your name?');
+    currentUserName = name;
+    // appendMessage('You joined');
+    console.log('You joined')
+    socket.emit('new-user', roomName, name);
+
+    messageForm.addEventListener('submit', e => {
         e.preventDefault();
         const message = messageInput.value;
-        console.log('message:', message);
-        sendMessage('text', message);
+        appendMessage(`${message}`);
+        socket.emit('send-chat-message', roomName, message);
         messageInput.value = '';
-    });
+    })
 
-    function sendMessage(type, content) {
-        socket.emit('send-chat-message', roomName, {
-            type: type,
-            content: content,
-            name: currentUserName
-        });
-        appendMessage(content, type, name)
+}
+
+socket.on('room-created', room => {
+    const roomElement = document.createElement('div');
+    roomElement.innerText = room;
+    const roomLink = document.createElement('a');
+    roomLink.href = `/${room}`;
+    roomLink.innerText = 'join';
+    roomContainer.append(roomElement);
+    roomContainer.append(roomLink);
+})
+
+socket.on('chat-message', data => {
+    // appendMessage(`${data.name}: ${data.message}`);
+    if (data.name !== currentUserName) {
+        // console.log("Another person sent to you");
+        appendMessage(data.message, data.name);
     }
 
-    if (messageForm != null) {
-        const name = prompt('What is your name?');
-        currentUserName = name;
-        console.log('You joined');
-        socket.emit('new-user', roomName, name);
-    }
-
-    socket.on('room-created', room => {
-        const roomElement = document.createElement('div');
-        roomElement.innerText = room;
-        const roomLink = document.createElement('a');
-        roomLink.href = `/${room}`;
-        roomLink.innerText = 'join';
-        roomContainer.append(roomElement);
-        roomContainer.append(roomLink);
-    });
-
-    socket.on('chat-message', data => {
-        if (data.name !== currentUserName) {
-            appendMessage(data.content, data.type, data.name);
-        }
-        appendMessage(data.content, data.type, data.name);
-    });
-
-    socket.on('user-connected', name => {
-        console.log(`${name} connected`);
-    });
-
-    socket.on('user-disconnected', name => {
-        console.log(`${name} disconnected`);
-    });
-
-    appendMessage('This is dumpmy data', 'text');
-
-    function appendMessage(content, messageType, senderName) {
-
-        if (undefined !== senderName) {
-            const div1 = document.createElement('div');
-            div1.classList.add('flex', 'w-4/6', 'lg:w-full', 'mt-2', 'space-x-3', 'max-w-2xl', 'ml-auto', 'justify-end', 'mr-5');
-            const div2 = document.createElement('div');
-            div2.classList.add('flex-shrink-0', 'h-10', 'w-10', 'rounded-full', 'bg-gray-300', 'cursor-pointer');
-            const div3 = document.createElement('div');
-            div3.classList.add('bg-white', 'p-2', 'rounded-l-2xl');
-            console.log(content);
-
-            if (messageType === 'image') {
-                const img = document.createElement('img');
-                console.log("My img:", img)
-                img.classList.add('sticker-size');
-                img.src = content;
-                div3.appendChild(img);
-            } else {
-                const p = document.createElement('p');
-                p.classList.add('text-end');
-                p.innerText = content;
-                div3.appendChild(p);
-            }
-            // div1.append(div2);
-            div1.append(div3);
-            messageContainer.append(div1);
-        } else {
-            const div1 = document.createElement('div');
-            div1.classList.add('flex', 'w-4/6', 'lg:w-full', 'mt-2', 'space-x-3', 'max-w-2xl');
-            const div2 = document.createElement('div');
-            div2.classList.add('flex-shrink-0', 'h-10', 'w-10', 'rounded-full', 'bg-gray-300', 'cursor-pointer');
-            const div3 = document.createElement('div');
-            div3.classList.add('bg-white', 'p-2', 'rounded-l-2xl');
-            if (messageType === 'image') {
-                const img = document.createElement('img');
-                console.log("My img:", img)
-                img.classList.add('sticker-size');
-                img.src = content;
-                div3.appendChild(img);
-            } else {
-                const p = document.createElement('p');
-                p.classList.add('text-end');
-                p.innerText = content;
-                div3.appendChild(p);
-            }
-            div1.append(div2);
-            div1.append(div3);
-            messageContainer.append(div1);
-        }
-        
-        setTimeout(() => {
-            messageContainer.scrollTop = messageContainer.scrollHeight;
-        }, 0);
-    }
 });
+
+socket.on('chat-sticker', data => {
+    // appendMessage(`${data.name}: ${data.message}`);
+    if (data.name !== currentUserName) {
+        // console.log("Another person sent to you");
+        appendSticker(data.imageSrc, data.name);
+    }
+
+});
+
+
+socket.on('user-connected', name => {
+    // appendMessage(`${name} connected`);
+    console.log(`${name} connected`)
+})
+
+socket.on('user-disconnected', name => {
+    // appendMessage(`${name} disconnected`);
+    console.log(`${name} disconnected`)
+})
+
+stickerButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const imageElement = this.querySelector('img');
+        if (imageElement) {
+            const imageSrc = imageElement.src;
+            console.log(imageSrc);
+            socket.emit('send-chat-sticker', roomName, imageSrc);
+            appendSticker(imageSrc, currentUserName);
+        }
+    });
+});
+
+
+function appendMessage(message, senderName) {
+    if (senderName === undefined) { //เราส่ง
+        const div1 = document.createElement('div');
+        div1.classList.add('flex', 'w-4/6', 'lg:w-full', 'mt-2', 'space-x-3', 'max-w-2xl', 'ml-auto', 'justify-end', 'mr-5');
+        const div2 = document.createElement('div');
+        div2.classList.add('flex-shrink-0', 'h-10', 'w-10', 'rounded-full', 'bg-gray-300', 'cursor-pointer');
+        const div3 = document.createElement('div');
+        div3.classList.add('bg-white', 'p-2', 'rounded-l-2xl');
+        const p = document.createElement('p')
+        p.classList.add('text-start')
+        p.innerText = message;
+        div3.appendChild(p)
+        div1.append(div3)
+        div1.append(div2)
+        messageContainer.append(div1);
+    } else {
+        const div1 = document.createElement('div');
+        div1.classList.add('flex', 'w-4/6', 'lg:w-full', 'mt-2', 'space-x-3', 'max-w-2xl');
+        const div2 = document.createElement('div');
+        div2.classList.add('flex-shrink-0', 'h-10', 'w-10', 'rounded-full', 'bg-gray-300', 'cursor-pointer');
+        const div3 = document.createElement('div');
+        div3.classList.add('bg-white', 'p-2', 'rounded-r-2xl');
+        const p = document.createElement('p')
+        p.classList.add('text-start')
+        p.innerText = message;
+        div3.appendChild(p)
+        div1.append(div2)
+        div1.append(div3)
+        messageContainer.append(div1);
+        console.log("Someone sent message to you");
+    }
+
+}
+
+function appendSticker(imageSrc, senderName) {
+    console.log("senderName " + senderName);
+    console.log("currentUserName " + currentUserName);
+    if (senderName === currentUserName) { //เราส่ง
+        const div1 = document.createElement('div');
+        div1.classList.add('flex', 'w-4/6', 'lg:w-full', 'mt-2', 'space-x-3', 'max-w-2xl');
+        const div2 = document.createElement('div');
+        div2.classList.add('flex-shrink-0', 'h-10', 'w-10', 'rounded-full', 'bg-gray-300', 'cursor-pointer');
+        const div3 = document.createElement('div');
+        div3.classList.add('bg-white', 'p-2', 'rounded-r-2xl');
+
+        const img = document.createElement('img');
+        img.classList.add('sticker-size');
+        img.src = imageSrc;
+        div3.appendChild(img);
+        div1.append(div2);
+        div1.append(div3);
+        messageContainer.append(div1);
+
+    } else {
+        const div1 = document.createElement('div');
+        div1.classList.add('flex', 'w-4/6', 'lg:w-full', 'mt-2', 'space-x-3', 'max-w-2xl', 'ml-auto', 'justify-end', 'mr-5');
+        const div2 = document.createElement('div');
+        div2.classList.add('flex-shrink-0', 'h-10', 'w-10', 'rounded-full', 'bg-gray-300', 'cursor-pointer');
+        const div3 = document.createElement('div');
+        div3.classList.add('bg-white', 'p-2', 'rounded-l-2xl');
+
+        const img = document.createElement('img');
+        img.classList.add('sticker-size');
+        img.src = imageSrc;
+        div3.appendChild(img);
+        div1.append(div3);
+        div1.append(div2);
+        messageContainer.append(div1);
+        console.log("Someone sent sticker to you");
+    }
+}

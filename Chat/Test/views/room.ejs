@@ -23,21 +23,21 @@
     .logo {
         width: 100%;
     }
-
+    
     #left-container {
         position: relative;
     }
-
+    
     .home {
         position: absolute;
         bottom: 10px;
         font-size: 2rem;
     }
-
+    
     .home:hover {
         color: yellow;
     }
-
+    
     .random-chat {
         position: absolute;
         width: 60%;
@@ -45,13 +45,14 @@
         right: 10px;
         font-size: 2rem;
         border-radius: 20px;
-        background: rgba(238, 150, 075);;
+        background: rgba(238, 150, 075);
+        ;
     }
-
+    
     .random-chat:hover {
         background: yellow;
     }
-
+    
     #send-container {
         position: absolute;
         bottom: 0;
@@ -59,19 +60,19 @@
         width: 100%;
         padding: 10px;
     }
-
+    
     .input-zone {
         display: flex;
         align-items: center;
     }
-
+    
     #message-input {
         position: relative;
         flex: 1;
         width: 100%;
         height: 3rem;
     }
-
+    
     #emo-button {
         position: absolute;
         top: 50%;
@@ -80,7 +81,7 @@
         font-size: 2.5rem;
         margin-right: 30px;
     }
-
+    
     #send-button {
         position: absolute;
         top: 50%;
@@ -88,11 +89,11 @@
         right: 20px;
         font-size: 2.5rem;
     }
-
+    
     .active {
         display: grid !important;
     }
-
+    
     .sticker-box {
         position: absolute;
         bottom: 70px;
@@ -103,26 +104,25 @@
         /* height: 50%; */
         background: white;
     }
-
+    
     .stk {
         height: 1fr;
         width: 1fr;
     }
-
+    
     .stk:hover {
         background: yellow;
     }
-
+    
     .sticker-size {
         width: 400px
     }
-
+    
     @media (max-width: 1024px) {
         .home,
         .random-chat {
             display: none;
         }
-
         .sticker-box {
             position: absolute;
             bottom: 50px;
@@ -165,8 +165,7 @@
 
                     <div class="w-[90%] flex justify-center bottom-8 lg:bottom-10 form-input mt-2" name="buttomChat">
                         <form id="send-container">
-                            <input type="text" id="message-input" class="w-[60%] rounded-xl bg-white mx-auto p-1 px-4"
-                                required></input>
+                            <input type="text" id="message-input" class="w-[60%] rounded-xl bg-white mx-auto p-1 px-4" required></input>
                             <!-- <img src="./assets/emojiChat.png" class="block" alt="Emoji Button" onclick="alert('เด้ง Modal จ้า')"> -->
                             <button type="submit" id="send-button" class="rounded-full"><i
                                     class="fa-solid fa-arrow-right"></i></button>
