@@ -82,7 +82,7 @@ if(!isset($_SESSION['UserID'])){
                     <input type="text" name = "input">
                     <label>Enter Your Name <i class="fa-solid fa-pencil"></i></label>
                 </div>
-                <button type="submit">save Avatar Name</button>
+                <button type="submit" style="border: none; background: rgba(238, 150, 075);">save Avatar Name</button>
             </form>
             <!-- end form1 -->
         </div>
