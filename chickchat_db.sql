@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 09, 2023 at 06:09 PM
+-- Generation Time: Dec 11, 2023 at 07:47 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -51,20 +51,9 @@ INSERT INTO `emotiontag` (`EmotionID`, `EmoName`) VALUES
 
 CREATE TABLE `product` (
   `ProductID` int(10) NOT NULL,
+  `ProductName` varchar(255) NOT NULL,
   `Price` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `product`
---
-
-INSERT INTO `product` (`ProductID`, `Price`) VALUES
-(1, 0),
-(2, 0),
-(3, 0),
-(4, 0),
-(5, 0),
-(6, 0);
 
 -- --------------------------------------------------------
 
@@ -74,11 +63,20 @@ INSERT INTO `product` (`ProductID`, `Price`) VALUES
 
 CREATE TABLE `profile` (
   `ProfileID` int(10) NOT NULL,
-  `EmotionID` int(5) NOT NULL,
-  `StatusID` int(5) NOT NULL,
-  `Name_avatar` varchar(255) NOT NULL,
-  `Chick_count` int(5) NOT NULL
+  `EmotionID` int(5) DEFAULT 1,
+  `StatusID` int(5) DEFAULT 1,
+  `Name_avatar` varchar(255) DEFAULT 'please insert your name',
+  `Chick_count` int(5) NOT NULL DEFAULT 0,
+  `Face` varchar(255) NOT NULL DEFAULT 'http://localhost/CHAT-SOCKET/ImageAsset/Face/Face1.PNG',
+  `Cloth` varchar(255) NOT NULL DEFAULT 'http://localhost/CHAT-SOCKET/ImageAsset/Clothes/Clothes1.PNG'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `profile`
+--
+
+INSERT INTO `profile` (`ProfileID`, `EmotionID`, `StatusID`, `Name_avatar`, `Chick_count`, `Face`, `Cloth`) VALUES
+(7, 1, 1, 'please insert your name', 0, 'http://localhost/CHAT-SOCKET/ImageAsset/Face/Face1.PNG', 'http://localhost/CHAT-SOCKET/ImageAsset/Clothes/Clothes1.PNG');
 
 -- --------------------------------------------------------
 
@@ -125,6 +123,14 @@ CREATE TABLE `users` (
   `Username` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`UserID`, `Username`, `Password`) VALUES
+(6, 'test001', '81dc9bdb52d04dc20036dbd8313ed055'),
+(7, 'test002', '81dc9bdb52d04dc20036dbd8313ed055');
 
 --
 -- Indexes for dumped tables
@@ -183,7 +189,7 @@ ALTER TABLE `emotiontag`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `ProductID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `ProductID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `statustag`
@@ -195,7 +201,7 @@ ALTER TABLE `statustag`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UserID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `UserID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
