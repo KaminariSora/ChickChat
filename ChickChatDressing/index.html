@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socket.IO Room Example</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+  <div>
+    <h2>Room Chat</h2>
+    <!-- <form id="roomForm" action="">
+      <input id="roomInput" placeholder="Enter Room Name" autocomplete="off" />
+      <button>Join Room</button>
+    </form> -->
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="roomInput" placeholder="Enter Room Name" autocomplete="off" />
+      <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
+  </div>
+
+  <script src="http://localhost:5000/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+    let currentRoom = null;
+
+    const roomForm = document.getElementById('roomForm');
+    const roomInput = document.getElementById('roomInput');
+
+    const form = document.getElementById('form');
+    const input = document.getElementById('input');
+    const messages = document.getElementById('messages');
+
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (input.value) {
+        socket.emit('chat message', input.value , roomInput.value);
+        input.value = '';
+      }
+      console.log('submit');
+    });
+
+    socket.on('chat message', (msg) => {
+      const item = document.createElement('li');
+      item.textContent = msg;
+      messages.appendChild(item);
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+
+
+  </script>
+</body>
+
+</html>

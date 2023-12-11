@@ -33,6 +33,13 @@ function queryDatabase(sqlQuery, params) {
     });
 }
 
+let data = [];
+function getUser(UserID){
+    data.push(UserID);
+}
+
+module.exports = {getUser};
+
 let count = 0;
 
 async function countEmotions(Emo1, Emo2) {
@@ -113,7 +120,7 @@ async function Match(Emo1, Status1, Emo2, Status2) {
     try {
         await countEmotions(Emo1, Emo2);
         await countStatus(Status1, Status2);
-        await getData();
+
 
         if (count == 2) {
             result = 1;

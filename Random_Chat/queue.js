@@ -1,6 +1,6 @@
 
 
-// const { queryDatabase, connectToDatabase } = require('./match');
+const { queryDatabase, connectToDatabase } = require('./match');
 
 function getTag(userID) {
     const {data} = require('./server.js');

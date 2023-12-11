@@ -12,29 +12,21 @@ const messageContainer = document.querySelector('.message-container');
 
 mail.addEventListener('click', () => {
     messageContainer.classList.add('active');
-})
+});
 
 closeMessage.addEventListener('click', () => {
     messageContainer.classList.remove('active');
-})
+});
+
+
 
 const random = document.querySelector('.random');
 
-let UserID = null;
-
 random.addEventListener('click', () => {
-    UserID = Data;
-    console.log(getUserID());
 
-})
+    window.location.href = "http://localhost:"+5000 +"/"+Data;
 
-function getUserID(){
-    if(UserID !== null) {
-        console.log(UserID);
-        return UserID;
-    } else {
-        console.log('No event data available yet.');
-    }
-}
 
-module.exports = {getUserID};
+    
+});
+

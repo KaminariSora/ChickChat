@@ -11,46 +11,29 @@
 <body>
 
     <h1>Loading....</h1>
-    <form id="form" action="">
-        <label for="inputBox">User:</label>
-        <input id="User" autocomplete="off">
-        <button>Submit</button>
-        <ul id="messages"></ul>
-    </form>
     <script src="/socket.io/socket.io.js"></script>
     <script>
 
         const socket = io();
-        const form = document.getElementById('form');
-        const User = document.getElementById('User');
 
-        const messages = document.getElementById('messages');
-
-        let data = [];
 
         //load data เก่า จาก server.js
         socket.on('updateData', (newData) => {
             data = newData;
-            updateMessages();
         });
 
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            if (User.value) {
-                socket.emit('User', User.value);
-                User.value = '';
-            }
-        });
 
         socket.on('User', (User) => {
             data.push(User);
             updateMessages();
         });
 
-        function updateMessages() {
-            console.log('data :', data);
-            messages.textContent = data;
-        }
+        socket.on('redirect', (url) => {
+            console.log('Redirecting to:', url);
+            // Perform the redirection
+            window.location.href = url;
+        });
+
     </script>
 
 </body>

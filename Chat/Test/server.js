@@ -24,6 +24,17 @@ app.post('/room', (req, res) => {
     io.emit('room-created', req.body.room)
 })
 
+app.get('/data', (req, res) => {
+    const user1 = req.query.user1;
+    const user2 = req.query.user2;
+
+    console.log(user1);
+    console.log(user2);
+    let room = user1 + user2;
+    io.emit('room-created', room)
+    res.render('room', { roomName: room })
+})
+
 app.get('/:room', (req, res) => {
     if (rooms[req.params.room] == null) {
         return res.redirect('/')
