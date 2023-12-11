@@ -1,0 +1,5 @@
+Array
+(
+    [key1] => http://localhost/CHAT-SOCKET/ImageAsset/Face/Face6.PNG
+    [key2] => http://localhost/CHAT-SOCKET/ImageAsset/Clothes/Clothes13.PNG
+)

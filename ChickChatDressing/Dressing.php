@@ -112,7 +112,7 @@ if(!isset($_SESSION['UserID'])){
                     <label for="message">Description</label>
                 </div>
                    <!-- show Description -->
-                   <button class="confirm" type = "submit" name = "confirm" id = 'submitBtn' >confirm</button>
+                   <button class="confirm" type = "submit" name = "confirm" id = 'submitBtn' onclick = "DB()">confirm</button>
             </form>
             <!-- end form2 -->
         </div>

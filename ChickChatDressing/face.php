@@ -28,44 +28,44 @@
                     </div>
                 </div>
             </div>
-            <div class="face-box">
-                <button class="face-item" id="faceSelect1" data-image="../ImageAsset/Face/Face1.PNG" onclick="checkStatus(this)">
-                    <img src="../ImageAsset/Face/Face1.PNG" class="img img-1" data-name="face 1">
-                    <!-- <div class="lock"><i class="fa-solid fa-lock"></i></div> -->
-                </button>
-                <button class="face-item" id="faceSelect2" data-image="../ImageAsset/Face/Face2.PNG" onclick="checkStatus(this)">
-                    <img src="../ImageAsset/Face/Face2.PNG" class="img img-2" data-name="face 2">
-                    <!-- <div class="lock"><i class="fa-solid fa-lock"></i></div> -->
-                </button>
-                <button class="face-item" id="faceSelect3" data-image="../ImageAsset/Face/Face3.PNG" onclick="checkStatus(this)">
-                    <img src="../ImageAsset/Face/Face3.PNG" class="img img-3" id="face" data-name="face 3" >
-                    <!-- <div class="lock"><i class="fa-solid fa-lock"></i></div> -->
-                </button>
-                <button class="face-item" id="faceSelect4" data-image="../ImageAsset/Face/Face4.PNG" onclick="checkStatus(this)">
-                    <img src="../ImageAsset/Face/Face4.PNG" class="img img-4" id="face" data-name="face 4" >
-                    <!-- <div class="lock"><i class="fa-solid fa-lock"></i></div> -->
-                </button>
-                <button class="face-item" id="faceSelect5" data-image="../ImageAsset/Face/Face5.PNG" onclick="checkStatus(this)">
-                    <img src="../ImageAsset/Face/Face5.PNG" class="img img-5" id="face" data-name="face 5" >
-                    <!-- <div class="lock"><i class="fa-solid fa-lock"></i></div> -->
-                </button>
-                <button class="face-item" id="faceSelect6" data-image="../ImageAsset/Face/Face6.PNG" onclick="checkStatus(this)">
-                    <img src="../ImageAsset/Face/Face6.PNG" class="img img-7" id="face" data-name="face 6" >
-                    <!-- <div class="lock"><i class="fa-solid fa-lock"></i></div> -->
-                </button>
-                <button class="face-item" id="faceSelect7" data-image="../ImageAsset/Face/Face7.PNG" onclick="checkStatus(this)">
-                    <img src="../ImageAsset/Face/Face7.PNG" class="img img-8" id="face" data-name="face 7" >
-                    <div class="lock"><i class="fa-solid fa-lock"></i></div>
-                </button>
-                <button class="face-item" id="faceSelect8" data-image="../ImageAsset/Face/Face8.PNG" onclick="checkStatus(this)">
-                    <img src="../ImageAsset/Face/Face1.PNG" class="img img-9" id="face" data-name="face 1" >
-                    <div class="lock"><i class="fa-solid fa-lock"></i></div>
-                </button>
-                <button class="face-item" id="faceSelect9" data-image="../ImageAsset/Face/Face9.PNG" onclick="checkStatus(this)">
-                    <img src="../ImageAsset/Face/Face2.PNG" class="img img-6" id="face" data-name="face 2" >
-                    <div class="lock"><i class="fa-solid fa-lock"></i></div>
-                </button>
-            </div>
+                <div class="face-box">
+                        <button class="face-item" id="faceSelect1" data-image="../ImageAsset/Face/Face1.PNG" onclick="checkStatus(this)">
+                            <img src="../ImageAsset/Face/Face1.PNG" class="img img-1" data-name="face 1">
+                            <!-- <div class="lock"><i class="fa-solid fa-lock"></i></div> -->
+                        </button>
+                        <button class="face-item" id="faceSelect2" data-image="../ImageAsset/Face/Face2.PNG" onclick="checkStatus(this)">
+                            <img src="../ImageAsset/Face/Face2.PNG" class="img img-2" data-name="face 2">
+                            <!-- <div class="lock"><i class="fa-solid fa-lock"></i></div> -->
+                        </button>
+                        <button class="face-item" id="faceSelect3" data-image="../ImageAsset/Face/Face3.PNG" onclick="checkStatus(this)">
+                            <img src="../ImageAsset/Face/Face3.PNG" class="img img-3" id="face" data-name="face 3" >
+                            <!-- <div class="lock"><i class="fa-solid fa-lock"></i></div> -->
+                        </button>
+                        <button class="face-item" id="faceSelect4" data-image="../ImageAsset/Face/Face4.PNG" onclick="checkStatus(this)">
+                            <img src="../ImageAsset/Face/Face4.PNG" class="img img-4" id="face" data-name="face 4" >
+                            <!-- <div class="lock"><i class="fa-solid fa-lock"></i></div> -->
+                        </button>
+                        <button class="face-item" id="faceSelect5" data-image="../ImageAsset/Face/Face5.PNG" onclick="checkStatus(this)">
+                            <img src="../ImageAsset/Face/Face5.PNG" class="img img-5" id="face" data-name="face 5" >
+                            <!-- <div class="lock"><i class="fa-solid fa-lock"></i></div> -->
+                        </button>
+                        <button class="face-item" id="faceSelect6" data-image="../ImageAsset/Face/Face6.PNG" onclick="checkStatus(this)">
+                            <img src="../ImageAsset/Face/Face6.PNG" class="img img-7" id="face" data-name="face 6" >
+                            <!-- <div class="lock"><i class="fa-solid fa-lock"></i></div> -->
+                        </button>
+                        <button class="face-item" id="faceSelect7" data-image="../ImageAsset/Face/Face7.PNG" onclick="checkStatus(this)">
+                            <img src="../ImageAsset/Face/Face7.PNG" class="img img-8" id="face" data-name="face 7" >
+                            <div class="lock"><i class="fa-solid fa-lock"></i></div>
+                        </button>
+                        <button class="face-item" id="faceSelect8" data-image="../ImageAsset/Face/Face8.PNG" onclick="checkStatus(this)">
+                            <img src="../ImageAsset/Face/Face1.PNG" class="img img-9" id="face" data-name="face 1" >
+                            <div class="lock"><i class="fa-solid fa-lock"></i></div>
+                        </button>
+                        <button class="face-item" id="faceSelect9" data-image="../ImageAsset/Face/Face9.PNG" onclick="checkStatus(this)">
+                            <img src="../ImageAsset/Face/Face2.PNG" class="img img-6" id="face" data-name="face 2" >
+                            <div class="lock"><i class="fa-solid fa-lock"></i></div>
+                        </button>
+               </div>
         </div>
         <footer>
             <button class="shop"><i class="fa-solid fa-cart-shopping"></i></button>
@@ -73,6 +73,7 @@
         </footer>
     </div>
     <script src="face.js"></script>
+    
 </body>
 
 </html>
