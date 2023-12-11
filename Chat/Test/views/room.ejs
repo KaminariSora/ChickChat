@@ -23,21 +23,21 @@
     .logo {
         width: 100%;
     }
-
+    
     #left-container {
         position: relative;
     }
-
+    
     .home {
         position: absolute;
         bottom: 10px;
         font-size: 2rem;
     }
-
+    
     .home:hover {
         color: yellow;
     }
-
+    
     .random-chat {
         position: absolute;
         width: 60%;
@@ -45,13 +45,14 @@
         right: 10px;
         font-size: 2rem;
         border-radius: 20px;
-        background: rgba(238, 150, 075);;
+        background: rgba(238, 150, 075);
+        ;
     }
-
+    
     .random-chat:hover {
         background: yellow;
     }
-
+    
     #send-container {
         position: absolute;
         bottom: 0;
@@ -59,19 +60,19 @@
         width: 100%;
         padding: 10px;
     }
-
+    
     .input-zone {
         display: flex;
         align-items: center;
     }
-
+    
     #message-input {
         position: relative;
         flex: 1;
         width: 100%;
         height: 3rem;
     }
-
+    
     #emo-button {
         position: absolute;
         top: 50%;
@@ -80,7 +81,7 @@
         font-size: 2.5rem;
         margin-right: 30px;
     }
-
+    
     #send-button {
         position: absolute;
         top: 50%;
@@ -88,11 +89,11 @@
         right: 20px;
         font-size: 2.5rem;
     }
-
+    
     .active {
         display: grid !important;
     }
-
+    
     .sticker-box {
         position: absolute;
         bottom: 70px;
@@ -103,22 +104,25 @@
         /* height: 50%; */
         background: white;
     }
-
+    
     .stk {
         height: 1fr;
         width: 1fr;
     }
-
+    
     .stk:hover {
         background: yellow;
     }
-
+    
+    .sticker-size {
+        width: 400px
+    }
+    
     @media (max-width: 1024px) {
         .home,
         .random-chat {
             display: none;
         }
-
         .sticker-box {
             position: absolute;
             bottom: 50px;
@@ -142,11 +146,11 @@
             </div>
 
             <!-- ช่องแชทตรงกลาง -->
-            <div class="w-full lg:w-4/5 chatBox bg-color02 mr-5 ml-5 lg:ml-1 my-5 rounded-2xl p-5 relative">
+            <div class="w-full lg:w-4/5 chatBox bg-color02 mr-5 ml-5 lg:ml-1 my-5 rounded-2xl p-5 relative chat-screen">
                 <h3 class="text-center text-3xl font-cherry"> Chickchat </h3>
 
                 <div class="sticker-box">
-                    <button class="stk"><img src="image/IMG_0991.PNG" alt="image"></button>
+                    <button class="stk" id="send-image"><img src="image/IMG_0991.PNG" alt="image"></button>
                     <button class="stk"><img src="image/IMG_0993.PNG" alt=""></button>
                     <button class="stk"><img src="image/IMG_1001.PNG" alt=""></button>
                     <button class="stk"><img src="image/IMG_0995.PNG" alt=""></button>
@@ -155,18 +159,17 @@
                 </div>
 
                 <div class="overflow-auto h-[96%] m-2">
-                    <div id="message-container"> </div>
+                    <div class="message-container" id="message-container"> </div>
                     <!-- คู่สนทนา -->
 
 
                     <div class="w-[90%] flex justify-center bottom-8 lg:bottom-10 form-input mt-2" name="buttomChat">
                         <form id="send-container">
-                            <input type="text" id="message-input" class="w-[60%] rounded-xl bg-white mx-auto p-1 px-4"
-                                required></input>
+                            <input type="text" id="message-input" class="w-[60%] rounded-xl bg-white mx-auto p-1 px-4" required></input>
                             <!-- <img src="./assets/emojiChat.png" class="block" alt="Emoji Button" onclick="alert('เด้ง Modal จ้า')"> -->
                             <button type="submit" id="send-button" class="rounded-full"><i
                                     class="fa-solid fa-arrow-right"></i></button>
-                            <button type="submit" id="emo-button" class="rounded-full emotion"><i
+                            <button type="submit" id="emo-button" class="rounded-full emotion emo-button"><i
                                     class="fa-solid fa-face-smile"></i></button>
                         </form>
 
