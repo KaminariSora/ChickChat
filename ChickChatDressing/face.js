@@ -1,3 +1,5 @@
+
+
 var selectedFace = localStorage.getItem("selectedFace");
 var selectedClothes = localStorage.getItem("selectedClothes");
 if (!selectedFace) {
@@ -34,7 +36,7 @@ function applyFace() {
         console.error("No face selected. Using old information.");
         var oldSelectedFace = localStorage.getItem("selectedFace");
         if (oldSelectedFace) {
-            window.location.href = "Dressing.html";
+            window.location.href = "Dressing.php";
         } else {
             console.error("No old information in local storage.");
         }
@@ -43,11 +45,11 @@ function applyFace() {
     var selectedFace = selectedFaceButton.querySelector("img").src;
     console.log(selectedFace);
     localStorage.setItem("selectedFace", selectedFace);
-    window.location.href = "Dressing.html";
+    window.location.href = "Dressing.php";
 }
 
 shop = document.querySelector('.shop');
 
 shop.addEventListener('click', () => {
-    window.location.href = '../ChickShop/chickShop.html';
+    window.location.href = '../ChickShop/chickShop.php';
 })

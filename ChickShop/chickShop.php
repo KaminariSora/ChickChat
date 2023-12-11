@@ -1,3 +1,11 @@
+<?php 
+   session_start();
+   include("../server/connect.php");
+
+   $Cardsql = "SELECT * FROM profile WHERE profileId = {$_SESSION['UserID']} ";
+   $CardQuery = mysqli_query($connect,$Cardsql);
+   $CardData = mysqli_fetch_assoc($CardQuery);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,7 +35,7 @@
     <header>
         <img src="image/IMG_1012.PNG" class="logo">
         <div class="chicken">
-            <p>${Number}</p>
+            <p><?php echo $CardData['Chick_count']?></p>
             <img src="image/IMG_0991.PNG" alt="none">
         </div>
     </header>
@@ -111,10 +119,6 @@
         const successful = document.querySelector('.successful');
         const yes = document.querySelector('.yes');
         const no = document.querySelector('.no');
-<<<<<<< HEAD
-=======
-        const ok = document.querySelector('.ok');
->>>>>>> Beta
 
         avatarShopBtn.addEventListener('click', () => {
             console.log('click on avatar shop');

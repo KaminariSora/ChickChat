@@ -133,7 +133,7 @@ if(!isset($_SESSION['UserID'])){
     const confirm = document.querySelector(".confirm");
 
     faceBtn.addEventListener('click', () => {
-        window.location.href = 'face.html';
+        window.location.href = 'face.php';
     })
 
     clothesBtn.addEventListener('click', () => {

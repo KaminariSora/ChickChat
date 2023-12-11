@@ -32,12 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }else{   /// นังไม่เคยลงทะเบียน
         if(empty($Status) OR (empty($Emotion))){
             $_SESSION['error'] = 'Please insert both Username And Password';
-            header("location: ../ChickChatHome/home.php");
+            header("location: Dressing.php");
         }
 
         $ProfileSql = "INSERT INTO profile (profileID, EmotionID, StatusID) VALUES ({$_SESSION["UserID"]},$Status,$Emotion)";
         mysqli_query($connect,$ProfileSql);
-
+        header("location: ../ChickChatHome/home.php");
         }
     }else{
         header("location: Dressing.php");
