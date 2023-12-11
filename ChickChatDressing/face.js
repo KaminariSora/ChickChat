@@ -1,4 +1,3 @@
-
 var selectedFace = localStorage.getItem("selectedFace");
 var selectedClothes = localStorage.getItem("selectedClothes");
 if (!selectedFace) {
@@ -12,7 +11,6 @@ function checkStatus (button) {
     const isButtonActive = !button.querySelector('.lock');
 
     if(isButtonActive) {
-
         changeFace(button);
     } else {
         console.log("This item is locked.");
@@ -32,12 +30,11 @@ function changeFace(button) {
 
 function applyFace() {
     var selectedFaceButton = document.querySelector(".selected-face");
-    
     if (!selectedFaceButton) {
         console.error("No face selected. Using old information.");
         var oldSelectedFace = localStorage.getItem("selectedFace");
         if (oldSelectedFace) {
-            window.location.href = "Dressing.php?";
+            window.location.href = "Dressing.html";
         } else {
             console.error("No old information in local storage.");
         }
@@ -46,34 +43,11 @@ function applyFace() {
     var selectedFace = selectedFaceButton.querySelector("img").src;
     console.log(selectedFace);
     localStorage.setItem("selectedFace", selectedFace);
-    // ----------------
-    var myData = {
-        key1: '',
-        key2: ''
-    };
-    myData.key1 = selectedFace;
-    myData.key2 = selectedClothes;
-    // ใช้ Fetch API เพื่อส่งข้อมูลไปยังเซิร์ฟเวอร์
-    fetch('face_DB.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(myData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Data sent successfully:', data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-    // ----------------
-    window.location.href = "Dressing.php";
+    window.location.href = "Dressing.html";
 }
 
 shop = document.querySelector('.shop');
 
 shop.addEventListener('click', () => {
-    window.location.href = '../ChickShop/chickShop.php';
+    window.location.href = '../ChickShop/chickShop.html';
 })
