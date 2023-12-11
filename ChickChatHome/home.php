@@ -71,7 +71,7 @@
                     <!-- ProfileID -->
                     <span class="ID">
                         <h5>ชื่อ</h5>
-                        <h5><?php echo $CardData['Name_avatar']?><</h5>
+                        <h5><?php echo $CardData['Name_avatar']?></h5>
                     </span>
                     <!-- AvatarName -->
                     <span class="ID">
