@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -183,8 +184,9 @@
         };
 
         window.addEventListener("load", initSlider);
+        const Data = <?php echo $_SESSION['UserID'];?>
     </script>
-    <script src="home.js"></script>
+    <script type="module" src="home.js"></script>
 </body>
 
 </html>
