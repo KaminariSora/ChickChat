@@ -86,3 +86,7 @@ function appendMessage(message, senderName) {
         messageContainer.append(div1);
     }
 }
+
+function stickerMessage() {
+    
+}
