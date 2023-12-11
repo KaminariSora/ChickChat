@@ -113,6 +113,10 @@
         background: yellow;
     }
 
+    .sticker-size {
+        width: 400px
+    }
+
     @media (max-width: 1024px) {
         .home,
         .random-chat {
@@ -142,11 +146,11 @@
             </div>
 
             <!-- ช่องแชทตรงกลาง -->
-            <div class="w-full lg:w-4/5 chatBox bg-color02 mr-5 ml-5 lg:ml-1 my-5 rounded-2xl p-5 relative">
+            <div class="w-full lg:w-4/5 chatBox bg-color02 mr-5 ml-5 lg:ml-1 my-5 rounded-2xl p-5 relative chat-screen">
                 <h3 class="text-center text-3xl font-cherry"> Chickchat </h3>
 
                 <div class="sticker-box">
-                    <button class="stk"><img src="image/IMG_0991.PNG" alt="image"></button>
+                    <button class="stk" id="send-image"><img src="image/IMG_0991.PNG" alt="image"></button>
                     <button class="stk"><img src="image/IMG_0993.PNG" alt=""></button>
                     <button class="stk"><img src="image/IMG_1001.PNG" alt=""></button>
                     <button class="stk"><img src="image/IMG_0995.PNG" alt=""></button>
@@ -155,7 +159,7 @@
                 </div>
 
                 <div class="overflow-auto h-[96%] m-2">
-                    <div id="message-container"> </div>
+                    <div class="message-container" id="message-container"> </div>
                     <!-- คู่สนทนา -->
 
 
@@ -166,7 +170,7 @@
                             <!-- <img src="./assets/emojiChat.png" class="block" alt="Emoji Button" onclick="alert('เด้ง Modal จ้า')"> -->
                             <button type="submit" id="send-button" class="rounded-full"><i
                                     class="fa-solid fa-arrow-right"></i></button>
-                            <button type="submit" id="emo-button" class="rounded-full emotion"><i
+                            <button type="submit" id="emo-button" class="rounded-full emotion emo-button"><i
                                     class="fa-solid fa-face-smile"></i></button>
                         </form>
 
