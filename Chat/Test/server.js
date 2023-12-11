@@ -2,12 +2,12 @@ const express = require('express')
 const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
+const path = require('path')
 
 app.set('views', './views')
 app.set('view engine', 'ejs')
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
-
 const rooms = {}
 
 app.get('/', (req, res) => {
