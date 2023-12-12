@@ -34,7 +34,7 @@ function applyFace() {
         console.error("No face selected. Using old information.");
         var oldSelectedFace = localStorage.getItem("selectedFace");
         if (oldSelectedFace) {
-            window.location.href = "Dressing.html";
+            window.location.href = "Dressing.php";
         } else {
             console.error("No old information in local storage.");
         }
