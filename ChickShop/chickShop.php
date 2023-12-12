@@ -119,6 +119,7 @@
         const successful = document.querySelector('.successful');
         const yes = document.querySelector('.yes');
         const no = document.querySelector('.no');
+        const ok = document.querySelector('.ok');
 
         avatarShopBtn.addEventListener('click', () => {
             console.log('click on avatar shop');

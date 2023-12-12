@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function appendMessage(content, messageType, senderName) {
 
-        if (undefined !== senderName) {
+        if (undefined === senderName) {
             const div1 = document.createElement('div');
             div1.classList.add('flex', 'w-4/6', 'lg:w-full', 'mt-2', 'space-x-3', 'max-w-2xl', 'ml-auto', 'justify-end', 'mr-5');
             const div2 = document.createElement('div');
@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 const p = document.createElement('p');
                 p.classList.add('text-end');
+                console.log(content)
                 p.innerText = content;
                 div3.appendChild(p);
             }
