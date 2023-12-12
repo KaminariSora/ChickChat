@@ -8,4 +8,11 @@
     mysqli_query($connect,$sql);
     header("location: chickShop.php");
  }
+
+if(isset($_GET['clothValue'])){
+    $clothValue = $_GET['clothValue'];
+    $sql = "UPDATE profile SET Chick_count= Chick_count - $clothValue where profileId = {$_SESSION['UserID']}";
+    mysqli_query($connect,$sql);
+    header("location: chickShop.php");
+}
  ?>

@@ -77,27 +77,27 @@
         </nav>
         <div class="shop-zone avatar-shop active">
             <div class="wrapper">
-                <div class="item" id="1">
-                    <img src="../ImageAsset/Clothes/Clothes7.PNG" alt="">
+                <div class="item cloth" id="1" clothValue = <?php echo $data1 ?>>
+                    <img src="../ImageAsset/Clothes/Clothes7.PNG"  alt="">
                     <div class="price"><?php echo $data1 ?></div>
                 </div>
-                <div class="item" id="2">
+                <div class="item cloth" id="2" clothValue = <?php echo $data2 ?>>
                     <img src="../ImageAsset/Clothes/Clothes12.PNG" alt="">
                     <div class="price"><?php echo $data2 ?></div>
                 </div>
-                <div class="item" id="3">
+                <div class="item cloth" id="3" clothValue = <?php echo $data3 ?>>
                     <img src="../ImageAsset/Clothes/Clothes9.PNG" alt="">
                     <div class="price"><?php echo $data3 ?></div>
                 </div>
-                <div class="item" id="4">
+                <div class="item cloth" id="4" clothValue = <?php echo $data4 ?>>
                     <img src="../ImageAsset/Face/Face7.PNG" alt="">
                     <div class="price"><?php echo $data4 ?></div>
                 </div>
-                <div class="item" id="5">
+                <div class="item cloth" id="5" clothValue = <?php echo $data5 ?>>
                     <img src="../ImageAsset/Face/Face7.PNG" alt="">
                     <div class="price"><?php echo $data5 ?></div>
                 </div>
-                <div class="item" id="6">
+                <div class="item cloth" id="6" clothValue = <?php echo $data6 ?>>
                     <img src="../ImageAsset/Face/Face7.PNG" alt="">
                     <div class="price"><?php echo $data6 ?></div>
                 </div>
@@ -159,6 +159,18 @@
                     let chickValue = e.getAttribute('chickvalue');
                     console.log(chickValue);
                     window.location.href = "Shop_DB.php?chickValue="+chickValue;
+                })
+            })
+        });
+
+        const clothID = document.querySelectorAll('.cloth');
+
+        clothID.forEach((e) => {
+            e.addEventListener("click", function () {
+                ok.addEventListener("click", function () {
+                    let clothValue = e.getAttribute('clothValue');
+                    console.log(clothValue);
+                    window.location.href = "Shop_DB.php?clothValue="+clothValue;
                 })
             })
         });
