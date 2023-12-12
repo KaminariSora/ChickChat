@@ -1,4 +1,19 @@
-<?php session_start() ?>
+<?php
+  include("../server/connect.php");
+  session_start();
+
+  $Cardsql = "SELECT * FROM profile WHERE profileId = {$_SESSION['UserID']} ";
+  $CardQuery = mysqli_query($connect,$Cardsql);
+  $CardData = mysqli_fetch_assoc($CardQuery);
+
+  $StaSql = "SELECT * FROM statustag INNER JOIN profile on statustag.StatusID = profile.StatusID where PROFILE.ProfileID ={$_SESSION['UserID']}";
+  $StaQuery = mysqli_query($connect,$StaSql);
+  $StaData = mysqli_fetch_assoc($StaQuery);
+
+  $EmoSql = "SELECT * FROM Emotiontag INNER JOIN profile on Emotiontag.EmotionID = profile.EmotionID where PROFILE.ProfileID ={$_SESSION['UserID']}";
+  $EmoQuery = mysqli_query($connect,$EmoSql);
+  $EmoData = mysqli_fetch_assoc($EmoQuery);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,18 +61,20 @@
                         </span>
                     </header>
                     <span class="ID">
-                        <h5>เลชประจำตัวชิค</h5>
-                        <h5>${Number}</h5>
+                        <h5>เลขประจำตัวชิค</h5>
+                        <h5><?php echo $_SESSION['UserID']?></h5>
                     </span>
+                    <!-- ProfileID -->
                     <span class="ID">
                         <h5>ชื่อ</h5>
-                        <h5>${Name}</h5>
+                        <h5><?php echo $CardData['Name_avatar']?></h5>
                     </span>
+                    <!-- AvatarName -->
                     <span class="ID">
                         <h5>ประเภท</h5>
-                        <h5>${Type}</h5>
+                        <h5><?php echo $StaData['StatusName']?></h5>
                         <h5>ซอส</h5>
-                        <h5>${Sources}</h5>
+                        <h5><?php echo $EmoData['EmoName']?></h5>
                     </span>
                     <div class="card-details">
                         <div class="name-number">
