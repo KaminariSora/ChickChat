@@ -267,6 +267,7 @@ h5.name {
     background: var(--base-color);
     font-size: 1.5rem;
     cursor: pointer;
+    z-index: 30000;
     /* overflow: hidden; */
 }
 
@@ -290,6 +291,7 @@ h5.name {
     position: absolute;
     bottom: 0;
     left: 0px;
+    height: 150px !important;
     /* background: var(--box-color); */
 }
 
