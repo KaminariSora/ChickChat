@@ -1,7 +1,11 @@
 <?php
   include("../server/connect.php");
   session_start();
-
+  if (!isset($_SESSION['UserID'])) {
+    // Redirect to the login page if UserID is not set
+    header("Location: ..\ChickChatLogIn\login.php");
+    exit();
+}
   $Cardsql = "SELECT * FROM profile WHERE profileId = {$_SESSION['UserID']} ";
   $CardQuery = mysqli_query($connect,$Cardsql);
   $CardData = mysqli_fetch_assoc($CardQuery);
