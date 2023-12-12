@@ -24,7 +24,7 @@ const random = document.querySelector('.random');
 
 random.addEventListener('click', () => {
 
-    window.location.href = "http://localhost:"+5000 +"/"+Data;
+    window.location.href = "http://localhost:" + 3000 + "/1";
 
 
 
