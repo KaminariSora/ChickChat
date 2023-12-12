@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query = mysqli_query($connect,$sql);
         $result = mysqli_fetch_assoc($query);
 
-        if((mysqli_num_rows($query))==1){    ///]ลงทะเบียนแล้ว
+        if((mysqli_num_rows($query))==1){    
             if(isset($_POST['Status'])){
                 $sql = "UPDATE profile set StatusID = $Status WHERE ProfileId = {$_SESSION['UserID']}";
                 $query = mysqli_query($connect,$sql);

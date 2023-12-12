@@ -53,7 +53,7 @@ if(count($errors)==0){
 }else  {
     array_push($errors, "Wrong username/password combination");
     $_SESSION['error'] = "Wrong username or password try again!";
-    header("location: register.php");
+    header("location: login.php");
 }
 
 
