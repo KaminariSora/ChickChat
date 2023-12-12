@@ -5,6 +5,36 @@
    $Cardsql = "SELECT * FROM profile WHERE profileId = {$_SESSION['UserID']} ";
    $CardQuery = mysqli_query($connect,$Cardsql);
    $CardData = mysqli_fetch_assoc($CardQuery);
+
+   $Productsql1 = "SELECT price FROM product WHERE productID = 1  ";
+   $ProductQuery1 = mysqli_query($connect,$Productsql1);
+   $ProductData1 = mysqli_fetch_assoc($ProductQuery1);
+   $data1 = $ProductData1['price'];
+
+   $Productsql2 = "SELECT price FROM product WHERE productID = 2  ";
+   $ProductQuery2 = mysqli_query($connect,$Productsql2);
+   $ProductData2 = mysqli_fetch_assoc($ProductQuery2);
+   $data2 = $ProductData2['price'];
+
+   $Productsql3 = "SELECT price FROM product WHERE productID = 3  ";
+   $ProductQuery3 = mysqli_query($connect,$Productsql3);
+   $ProductData3 = mysqli_fetch_assoc($ProductQuery3);
+   $data3 = $ProductData3['price'];
+
+   $Productsql4 = "SELECT price FROM product WHERE productID = 4  ";
+   $ProductQuery4 = mysqli_query($connect,$Productsql4);
+   $ProductData4 = mysqli_fetch_assoc($ProductQuery4);
+   $data4 = $ProductData4['price'];
+
+   $Productsql5 = "SELECT price FROM product WHERE productID = 5  ";
+   $ProductQuery5 = mysqli_query($connect,$Productsql5);
+   $ProductData5 = mysqli_fetch_assoc($ProductQuery5);
+   $data5 = $ProductData5['price'];
+
+   $Productsql6 = "SELECT price FROM product WHERE productID = 6  ";
+   $ProductQuery6 = mysqli_query($connect,$Productsql6);
+   $ProductData6 = mysqli_fetch_assoc($ProductQuery6);
+   $data6 = $ProductData6['price'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,55 +79,55 @@
             <div class="wrapper">
                 <div class="item" id="1">
                     <img src="../ImageAsset/Clothes/Clothes7.PNG" alt="">
-                    <div class="price">${Price}</div>
+                    <div class="price"><?php echo $data1 ?></div>
                 </div>
                 <div class="item" id="2">
                     <img src="../ImageAsset/Clothes/Clothes12.PNG" alt="">
-                    <div class="price">${Price}</div>
+                    <div class="price"><?php echo $data2 ?></div>
                 </div>
                 <div class="item" id="3">
                     <img src="../ImageAsset/Clothes/Clothes9.PNG" alt="">
-                    <div class="price">${Price}</div>
+                    <div class="price"><?php echo $data3 ?></div>
                 </div>
                 <div class="item" id="4">
                     <img src="../ImageAsset/Face/Face7.PNG" alt="">
-                    <div class="price">${Price}</div>
+                    <div class="price"><?php echo $data4 ?></div>
                 </div>
                 <div class="item" id="5">
                     <img src="../ImageAsset/Face/Face7.PNG" alt="">
-                    <div class="price">${Price}</div>
+                    <div class="price"><?php echo $data5 ?></div>
                 </div>
                 <div class="item" id="6">
                     <img src="../ImageAsset/Face/Face7.PNG" alt="">
-                    <div class="price">${Price}</div>
+                    <div class="price"><?php echo $data6 ?></div>
                 </div>
             </div>
         </div>
         <div class="shop-zone chick-shop">
             <div class="wrapper">
-                <div class="item" id="7">
+                <div class="item avatar" chickvalue = 35 id ='7' >
                     <img src="../ImageAsset/package/Pack1.PNG" alt="">
-                    <div class="price">${Price}</div>
+                    <div class="price" >35$</div>
                 </div>
-                <div class="item" id="8">
+                <div class="item avatar" chickvalue = 70 id = '8'>
                     <img src="../ImageAsset/package/Pack2.PNG" alt="">
-                    <div class="price">${Price}</div>
+                    <div class="price">70$</div>
                 </div>
-                <div class="item" id="9">
+                <div class="item avatar" chickvalue = 105 id = '9'>
                     <img src="../ImageAsset/package/Pack3.PNG" alt="">
-                    <div class="price">${Price}</div>
+                    <div class="price">105$</div>
                 </div>
-                <div class="item" id="10">
+                <div class="item avatar" chickvalue = 210 id = '10'>
                     <img src="../ImageAsset/package/Pack4.PNG" alt="">
-                    <div class="price">${Price}</div>
+                    <div class="price">210$</div>
                 </div>
-                <div class="item" id="11">
+                <div class="item avatar" chickvalue = 300 id = '11'>
                     <img src="../ImageAsset/package/Pack5.PNG" alt="">
-                    <div class="price">${Price}</div>
+                    <div class="price">300$</div>
                 </div>
-                <div class="item" id="12">
+                <div class="item avatar" chickvalue = 500  id = '12'>
                     <img src="../ImageAsset/package/Pack6.PNG" alt="">
-                    <div class="price">${Price}</div>
+                    <div class="price">$500</div>
                 </div>
             </div>
         </div>
@@ -120,6 +150,21 @@
         const yes = document.querySelector('.yes');
         const no = document.querySelector('.no');
         const ok = document.querySelector('.ok');
+
+        const chickID = document.querySelectorAll('.avatar');
+
+        chickID.forEach((e) => {
+            e.addEventListener("click", function () {
+                ok.addEventListener("click", function () {
+                    let chickValue = e.getAttribute('chickvalue');
+                    console.log(chickValue);
+                    window.location.href = "Shop_DB.php?chickValue="+chickValue;
+                })
+            })
+        });
+
+
+
 
         avatarShopBtn.addEventListener('click', () => {
             console.log('click on avatar shop');
@@ -170,7 +215,7 @@
             })
         }
 
-        function handleOK() {
+        function handleOK(chickvalue) {
             successful.classList.remove('active');
             console.log("successful");
         }
@@ -182,7 +227,7 @@
             if (item) {
                 item.addEventListener('click', (event) => {
                     event.stopPropagation();
-                    handlePopUp();
+                    handlePopUp()
                 });
             } else {
                 console.error(`Element with ID ${itemId} not found.`);
