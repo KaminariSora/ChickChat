@@ -138,7 +138,7 @@
     <div class="footer">
         <div class="icon-box">
             <button class="mail"><i class="fa-solid fa-envelope"></i></button>
-            <a href="../ChickShop/chickShop.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="../ChickShop/chickShop.php"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
         <div class="help">
             <button class="help-btn" id="toggleButton"><i class="fa-solid fa-circle-info"></i></button>
