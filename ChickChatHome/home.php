@@ -47,7 +47,10 @@
         <div class="grid">
             <header class="header">
                 <div class="banner">
+                <a href="http://localhost/Chat-Socket/ChickChatHome">
                     <img src="image/IMG_1012.PNG" class="inside-banner" alt="">
+</a>
+
                 </div>
                 <div class="chicken">
                     <p><?php echo $CardData['Chick_count']?></p>

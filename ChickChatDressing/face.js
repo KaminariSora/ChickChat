@@ -7,10 +7,10 @@ document.getElementById("faceDiv").style.backgroundImage = "url('" + selectedFac
 document.getElementById("clothesDiv").style.backgroundImage = "url('" + selectedClothes + "')";
 console.log('data exist');
 
-function checkStatus (button) {
+function checkStatus(button) {
     const isButtonActive = !button.querySelector('.lock');
 
-    if(isButtonActive) {
+    if (isButtonActive) {
         changeFace(button);
     } else {
         console.log("This item is locked.");
@@ -20,9 +20,9 @@ function checkStatus (button) {
 function changeFace(button) {
     var faceDiv = document.getElementById("faceDiv");
     var allButtons = document.querySelectorAll("button[id^='faceSelect']");
-    
+
     faceDiv.style.backgroundImage = "url('" + button.dataset.image + "')";
-    allButtons.forEach(function (btn) {
+    allButtons.forEach(function(btn) {
         btn.classList.remove("selected-face");
     });
     button.classList.add("selected-face");
@@ -43,11 +43,11 @@ function applyFace() {
     var selectedFace = selectedFaceButton.querySelector("img").src;
     console.log(selectedFace);
     localStorage.setItem("selectedFace", selectedFace);
-    window.location.href = "Dressing.html";
+    window.location.href = "Dressing.php";
 }
 
 shop = document.querySelector('.shop');
 
 shop.addEventListener('click', () => {
-    window.location.href = '../ChickShop/chickShop.html';
+    window.location.href = '../ChickShop/chickShop.php';
 })

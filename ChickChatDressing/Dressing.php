@@ -48,7 +48,9 @@ if(!isset($_SESSION['UserID'])){
 
 <body>
     <header>
-        <img src="image/IMG_1012.PNG" alt="">
+    <a href="http://localhost/Chat-Socket/ChickChatHome">
+                    <img src="image/IMG_1012.PNG" class="inside-banner" alt="">
+</a>
     </header>
         <?php if(isset($_SESSION['error'])):?>
                 <div class="error">
@@ -77,8 +79,10 @@ if(!isset($_SESSION['UserID'])){
                 </div>
             </div>
             <!-- start form1 -->
-            <form action="Dressing_DB.php" method = 'POST' id = 'form1'>
-                <div class=" input-box Name">
+
+    </script>
+            <form action="Dressing_DB.php" method ='POST' id ='form1'>
+                <div class="input-box Name">
                     <input type="text" name = "input">
                     <label>Enter Your Name <i class="fa-solid fa-pencil"></i></label>
                 </div>
@@ -133,7 +137,7 @@ if(!isset($_SESSION['UserID'])){
     const confirm = document.querySelector(".confirm");
 
     faceBtn.addEventListener('click', () => {
-        window.location.href = 'face.php';
+        window.location.href = 'face.html';
     })
 
     clothesBtn.addEventListener('click', () => {

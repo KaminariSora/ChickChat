@@ -5,7 +5,7 @@ include("../server/connect.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['input'])) { 
-        header("location: Dressing.php");
+        header("location: ../ChickChatHome/home.php");
         $text = $_POST['input'];
         $sql = "UPDATE profile set Name_avatar = '$text' WHERE ProfileId = {$_SESSION['UserID']}";
         $query = mysqli_query($connect,$sql);
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("location: ../ChickChatHome/home.php");
 
     }else{
-        header("location: Dressing.php");
+        header("location: ../ChickChatHome/home.php");
     }
 } 
 }
