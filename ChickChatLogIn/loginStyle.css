@@ -1,6 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-
-
 :root {
     --transition: transform .5s ease;
 }
@@ -19,9 +17,10 @@ body {
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(244,211,94);
+    background-color: rgba(244, 211, 94);
     background-image: url('Image/IMG_1004\ \(1\).GIF');
-    background-size: cover; /* Adjust this as needed */
+    background-size: cover;
+    /* Adjust this as needed */
     background-repeat: no-repeat;
     background-position: center center;
 }
@@ -106,7 +105,7 @@ body {
     display: flex;
 }
 
-.navigation .btn{
+.navigation .btn {
     color: #333;
     position: relative;
     font-size: 2em;

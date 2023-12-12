@@ -6,6 +6,10 @@ const messageInput = document.getElementById('message-input')
 let currentUserName;
 const stickerButtons = document.querySelectorAll('.sticker-box .stk');
 
+function scrollToBottom() {
+    const messageContainer = document.getElementById('message-container');
+    messageContainer.scrollTop = messageContainer.scrollHeight;
+}
 
 if (messageForm != null) {
     const name = prompt('What is your name?');
@@ -109,7 +113,7 @@ function appendMessage(message, senderName) {
         messageContainer.append(div1);
         console.log("Someone sent message to you");
     }
-
+    scrollToBottom()
 }
 
 function appendSticker(imageSrc, senderName) {
@@ -147,4 +151,7 @@ function appendSticker(imageSrc, senderName) {
         messageContainer.append(div1);
         console.log("Someone sent sticker to you");
     }
+
+
+    scrollToBottom()
 }

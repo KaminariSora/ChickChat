@@ -100,9 +100,11 @@
         right: 10px;
         display: none;
         grid-template-columns: repeat(3, 1fr);
-        width: 50%;
+        width: 40%;
         /* height: 50%; */
         background: white;
+        border-radius: 2%;
+        opacity: 90%;
     }
     
     .stk {
@@ -142,7 +144,7 @@
             <div class="w-0 lg:w-1/5 lg:profileBox lg:bg-white lg:ml-5 lg:mr-1 lg:my-5 lg:rounded-2xl lg:p-5" id="left-container">
                 <a href="/"><img src="/assets/cc_logo.png" class="logo"></a>
                 <button class="home"><i class="fa-solid fa-house"></i></button>
-                <button class="random-chat">Random</button>
+                <button class="random-chat font-cherry">Random</button>
             </div>
 
             <!-- ช่องแชทตรงกลาง -->
@@ -158,26 +160,26 @@
                     <button class="stk"><img src="image/IMG_0997.PNG" alt=""></button>
                 </div>
 
-                <div class="overflow-auto h-[96%] m-2">
-                    <div class="message-container" id="message-container"> </div>
+                <div class="overflow-auto h-[96%] mb-2" id="message-container">
+
                     <!-- คู่สนทนา -->
 
 
-                    <div class="w-[90%] flex justify-center bottom-8 lg:bottom-10 form-input mt-2" name="buttomChat">
-                        <form id="send-container">
-                            <input type="text" id="message-input" class="w-[60%] rounded-xl bg-white mx-auto p-1 px-4" required></input>
-                            <!-- <img src="./assets/emojiChat.png" class="block" alt="Emoji Button" onclick="alert('เด้ง Modal จ้า')"> -->
-                            <button type="submit" id="send-button" class="rounded-full"><i
+                    <!-- <div class="w-[90%] flex justify-center bottom-8 lg:bottom-10 form-input mt-2" name="buttomChat"> -->
+                    <form id="send-container" class="w-[90%] flex justify-center bottom-8 lg:bottom-10 form-input mt-2">
+                        <input type="text" id="message-input" class="w-[60%] rounded-xl bg-white mx-auto p-1 px-4" required></input>
+                        <!-- <img src="./assets/emojiChat.png" class="block" alt="Emoji Button" onclick="alert('เด้ง Modal จ้า')"> -->
+                        <button type="submit" id="send-button" class="rounded-full"><i
                                     class="fa-solid fa-arrow-right"></i></button>
-                            <button type="submit" id="emo-button" class="rounded-full emotion emo-button"><i
+                        <button type="submit" id="emo-button" class="rounded-full emotion emo-button"><i
                                     class="fa-solid fa-face-smile"></i></button>
-                        </form>
+                    </form>
 
-                        <!-- <div class="w-[100%] justify-center fixed bottom-0 lg:bottom-10 rounded form-input mt-5" name="buttomChat"> -->
-                        <!-- <input type="text" class="w-[60%] rounded-xl bg-white mx-auto p-1 px-4" type="text" id="message" required> -->
-                        <!-- <button type="submit">Send</button> -->
-                        <!-- </div> -->
-                    </div>
+                    <!-- <div class="w-[100%] justify-center fixed bottom-0 lg:bottom-10 rounded form-input mt-5" name="buttomChat"> -->
+                    <!-- <input type="text" class="w-[60%] rounded-xl bg-white mx-auto p-1 px-4" type="text" id="message" required> -->
+                    <!-- <button type="submit">Send</button> -->
+                    <!-- </div> -->
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
