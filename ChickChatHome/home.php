@@ -46,7 +46,7 @@
                     <img src="image/IMG_1012.PNG" class="inside-banner" alt="">
                 </div>
                 <div class="chicken">
-                    <p>${Number}</p>
+                    <p><?php echo $CardData['Chick_count']?></p>
                     <img src="image/IMG_0991.PNG" alt="">
                 </div>
             </header>

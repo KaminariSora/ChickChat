@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
-
 :root {
     --background-color: rgba(244, 211, 94);
     --base-color: rgba(238, 150, 075);
@@ -87,6 +86,8 @@ a {
     width: auto;
     background: white;
     border-radius: 20px;
+    margin: 1px;
+    padding: 1px;
 }
 
 .grid {
@@ -113,7 +114,7 @@ a {
     box-shadow: var(--shadow);
     z-index: 0;
     margin: 20px auto;
-    overflow: auto ;
+    overflow: auto;
 }
 
 .head,
@@ -200,7 +201,7 @@ h5.name {
     /* border: 2px solid red; */
 }
 
-.dressing img{
+.dressing img {
     min-width: 200px;
     min-height: 200px;
     height: 100px;
@@ -524,28 +525,26 @@ h5.name {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #888; /* Color of the scrollbar thumb */
-    border-radius: 6px; /* Round the corners of the scrollbar thumb */
+    background-color: #888;
+    /* Color of the scrollbar thumb */
+    border-radius: 6px;
+    /* Round the corners of the scrollbar thumb */
 }
 
 @media screen and (max-width: 374px) {
     .banner {
         min-height: 50px;
     }
-
     .footer a {
         font-size: 2rem;
     }
-
     .help i {
         font-size: 2rem;
         color: #333;
     }
-
     .random {
         font-size: 18px;
     }
-
     .random i {
         display: none;
     }
@@ -555,16 +554,13 @@ h5.name {
     .container {
         height: fit-content;
     }
-
     .banner {
         min-height: 50px;
     }
-
     .footer {
         position: absolute;
         bottom: 0;
     }
-
     .random i {
         display: none;
     }
@@ -572,8 +568,8 @@ h5.name {
 
 @media only screen and (max-width: 447px) {
     .card {
-      top: 80px;  
-      z-index: 100;
+        top: 80px;
+        z-index: 100;
     }
 }
 
@@ -582,13 +578,11 @@ h5.name {
         width: 100%;
         justify-content: space-between;
     }
-
     .chicken {
         position: inherit;
         /* margin: 0; */
         right: 0 !important;
     }
-
     .inside-banner {
         width: 50% !important;
     }
