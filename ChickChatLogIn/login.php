@@ -71,7 +71,7 @@
                     <label class="confirm-pass"><i class="fa-solid fa-lock"></i> Confirm Password</label>
                 </div>
                 <div class="submit-btn">
-                    <button type="submit" class="btn" name = 'confrim_Regis'>Login</button>
+                    <button type="submit" class="btn" name = 'confrim_Regis'>Register</button>
                 </div>
             </form>
         </div>
